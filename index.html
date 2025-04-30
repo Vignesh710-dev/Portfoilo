@@ -1314,7 +1314,32 @@
     </div>
 </section>
 <!-- ... existing code before footer ... -->
+<!-- Add this in your skills section or footer -->
+<div class="coffee-fuel glass-effect p-3 rounded-4 d-none d-xl-block" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <div class="d-flex align-items-center mb-2">
+        <i class="fas fa-coffee gradient-text me-2"></i>
+        <span class="small">Coding Fuel:</span>
+    </div>
+    <div class="progress" style="height: 10px; background: rgba(255,255,255,0.1);">
+        <div class="progress-bar bg-gradient" role="progressbar" style="width: 87%;" 
+             aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="text-end mt-1 small">87% ☕</div>
+</div>
 
+<script>
+    // Make the coffee level fluctuate randomly
+    setInterval(() => {
+        const fuel = document.querySelector('.coffee-fuel .progress-bar');
+        const current = parseInt(fuel.style.width);
+        const change = Math.random() * 10 - 3; // Random change between -3 and +7
+        let newLevel = Math.min(100, Math.max(5, current + change));
+        fuel.style.width = newLevel + '%';
+        fuel.setAttribute('aria-valuenow', newLevel);
+        fuel.nextElementSibling.textContent = Math.round(newLevel) + '% ' + 
+            (newLevel > 70 ? '☕☕' : newLevel > 40 ? '☕' : '😴');
+    }, 3000);
+</script>
 <!-- New Footer Section -->
 <footer class="footer-section py-5 position-relative">
     <div class="container">
@@ -2111,30 +2136,320 @@
             mirror: false
         });
     </script>
-    <!-- Add this before the closin tag -->
-<audio id="welcome-sound" preload="auto">
-    <source src="https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3" type="audio/mpeg">
-</audio>
+    <!-- Add this before closing body tag -->
 <script>
-    // Play welcome sound when page loads (every time)
-    document.addEventListener('DOMContentLoaded', function() {
-        const welcomeSound = document.getElementById('welcome-sound');
-        welcomeSound.volume = 0.3; // Set volume to 30%
-        
-        // Play sound after a small delay to ensure it works
-        setTimeout(() => {
-            welcomeSound.play().catch(e => console.log("Autoplay prevented:", e));
-            
-            // Speak welcome message after sound plays
-            const welcomeText = "Welcome to Vignesh Portfolio How Can I help You";
-            const utterance = new SpeechSynthesisUtterance(welcomeText);
-            utterance.rate = 0.9; // Slower speech rate
-            utterance.pitch = 1.0; // Normal pitch
-            speechSynthesis.speak(utterance);
-        }, 500);
+    // Easter egg - Konami code
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 
+                       'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 
+                       'b', 'a'];
+    let konamiIndex = 0;
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === konamiCode[konamiIndex]) {
+            konamiIndex++;
+            if (konamiIndex === konamiCode.length) {
+                // Trigger fun effect
+                document.body.classList.add('konami-effect');
+                setTimeout(() => {
+                    document.body.classList.remove('konami-effect');
+                }, 3000);
+                konamiIndex = 0;
+                
+                // Play sound and show message
+                Swal.fire({
+                    title: 'Secret Unlocked!',
+                    text: 'You found the hidden feature!',
+                    icon: 'success',
+                    background: '#1a1a1a',
+                    color: '#fff',
+                    confirmButtonColor: '#6E57E0'
+                });
+            }
+        } else {
+            konamiIndex = 0;
+        }
     });
 </script>
-<source src="audio/welcome.mp3" type="audio/mpeg">
+
+<style>
+    /* Add this to your style section */
+    .konami-effect {
+        animation: rainbow 0.5s linear infinite;
+    }
+    
+    @keyframes rainbow {
+        0% { filter: hue-rotate(0deg); }
+        100% { filter: hue-rotate(360deg); }
+    }
+</style>
+
+<!-- Add before closing body tag -->
+<div id="emoji-cursor"></div>
+
+<style>
+    #emoji-cursor {
+        position: fixed;
+        pointer-events: none;
+        font-size: 24px;
+        z-index: 9999;
+        transition: transform 0.1s ease;
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+</style>
+
+<script>
+    document.addEventListener('mousemove', (e) => {
+        const emojis = ['✨', '✨', '✨', '✨', '✨', '✨', '✨'];
+        const cursor = document.getElementById('emoji-cursor');
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        if (Math.random() < 0.05) {
+            cursor.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            cursor.style.display = 'block';
+            setTimeout(() => {
+                cursor.style.display = 'none';
+            }, 1000);
+        }
+    });
+</script>
+
+
+<script>
+    const messages = [
+        "Counting pixels...",
+        "Waking up the developer...",
+        "Assembling the Avengers of code...",
+        "Convincing React to render...",
+        "Turning caffeine into code...",
+        "Herding CSS cats..."
+    ];
+    
+    const loadingText = document.getElementById('loading-text');
+    let counter = 0;
+    
+    setInterval(() => {
+        loadingText.textContent = messages[counter % messages.length];
+        counter++;
+    }, 3000);
+</script>
+<!-- Add this before closing body tag -->
+<script>
+    // Copy protection with funny effect
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+        
+        // Create floating emoji
+        const emoji = document.createElement('div');
+        emoji.textContent = '🚫';
+        emoji.style.position = 'fixed';
+        emoji.style.fontSize = '50px';
+        emoji.style.zIndex = '9999';
+        emoji.style.pointerEvents = 'none';
+        emoji.style.animation = 'flyUp 2s forwards';
+        emoji.style.left = (e.pageX - 25) + 'px';
+        emoji.style.top = (e.pageY - 25) + 'px';
+        document.body.appendChild(emoji);
+        
+        // Remove after animation
+        setTimeout(() => {
+            emoji.remove();
+        }, 2000);
+        
+        // Show funny message
+        Swal.fire({
+            icon: 'warning',
+            title: 'No Copying!',
+            text: 'My code is protected by magical unicorns 🦄',
+            background: '#1a1a1a',
+            color: '#fff',
+            confirmButtonColor: '#6E57E0'
+        });
+    });
+</script>
+
+<style>
+    @keyframes flyUp {
+        0% { transform: translateY(0) scale(1); opacity: 1; }
+        100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+    }
+</style>
+<!-- Add this before closing body tag -->
+<script>
+    // Developer mode activation
+    let clickCount = 0;
+    let lastClickTime = 0;
+    const logo = document.querySelector('.navbar-brand');
+    
+    if (logo) {
+        logo.addEventListener('click', (e) => {
+            const now = Date.now();
+            if (now - lastClickTime < 500) { // 500ms between clicks
+                clickCount++;
+                if (clickCount >= 5) {
+                    activateDevMode();
+                    clickCount = 0;
+                }
+            } else {
+                clickCount = 1;
+            }
+            lastClickTime = now;
+        });
+    }
+
+    function activateDevMode() {
+        // Add funny effects
+        document.body.classList.add('dev-mode');
+        
+        // Show funny message
+        Swal.fire({
+            title: 'Developer Mode Activated!',
+            html: '<div style="text-align:center">' +
+                  '<img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" width="150"><br>' +
+                  '<p>+10 Coding Speed<br>+50 Debugging Skills<br>-100 Social Life</p></div>',
+            background: '#1a1a1a',
+            color: '#fff',
+            confirmButtonColor: '#6E57E0'
+        });
+
+        // Add console easter egg
+        console.log('%cDeveloper Mode Activated!', 'font-size: 20px; color: #6E57E0; font-weight: bold;');
+        console.log('%cCheat Codes:', 'color: #9B6DFF; font-weight: bold;');
+        console.log('%c• Unlimited Coffee: Press C', 'color: #fff');
+        console.log('%c• Instant Debug: Press D', 'color: #fff');
+        
+        // Remove after 10 seconds
+        setTimeout(() => {
+            document.body.classList.remove('dev-mode');
+        }, 10000);
+    }
+</script>
+
+<style>
+    /* Add to your style section */
+    .dev-mode {
+        animation: glitch 0.5s linear infinite;
+    }
+    
+    @keyframes glitch {
+        0% { filter: hue-rotate(0deg); }
+        25% { transform: translate(-2px, 2px); }
+        50% { filter: hue-rotate(90deg); transform: translate(2px, -2px); }
+        75% { transform: translate(-2px, 2px); }
+        100% { filter: hue-rotate(0deg); }
+    }
+</style>
+<!-- Add this before closing body tag -->
+<div id="debug-mode-btn" class="glass-effect p-3 rounded-4" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; display: none;">
+    <button class="btn btn-gradient" onclick="activateDebugMode()">
+        <i class="fas fa-bug me-2"></i>Enable Debug Mode
+    </button>
+</div>
+
+<!-- Add this before closing body tag -->
+<div id="mobile-fun" class="glass-effect p-4 rounded-4 text-center" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; display: none;">
+    <h5 class="gradient-text mb-3">👋 Hey Mobile User!</h5>
+    <p class="mb-3">Shake your phone for a surprise!</p>
+    <div class="emoji-display" style="font-size: 2rem;">📱</div>
+</div>
+
+<script>
+    // Check if mobile device
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        const mobileFun = document.getElementById('mobile-fun');
+        mobileFun.style.display = 'block';
+        
+        let lastShakeTime = 0;
+        const emojiDisplay = document.querySelector('.emoji-display');
+        const emojis = ['🎉', '✨', '💻', '🚀', '👨‍💻', '🤯', '🔥'];
+        
+        // Detect shake gesture
+        window.addEventListener('devicemotion', (e) => {
+            const acceleration = e.accelerationIncludingGravity;
+            const shakeThreshold = 15;
+            const now = Date.now();
+            
+            if (Math.abs(acceleration.x) > shakeThreshold || 
+                Math.abs(acceleration.y) > shakeThreshold || 
+                Math.abs(acceleration.z) > shakeThreshold) {
+                
+                // Prevent rapid firing
+                if (now - lastShakeTime > 1000) {
+                    lastShakeTime = now;
+                    
+                    // Change emoji
+                    emojiDisplay.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    emojiDisplay.style.transform = 'scale(1.5)';
+                    
+                    // Reset animation
+                    setTimeout(() => {
+                        emojiDisplay.style.transform = 'scale(1)';
+                    }, 300);
+                    
+                    // Show funny message after 3 shakes
+                    if (++shakeCount >= 3) {
+                        Swal.fire({
+                            title: 'Mobile Master!',
+                            html: '<div style="text-align:center">' +
+                                '<img src="https://media.giphy.com/media/3o7TKsrfldhNIOzRdK/giphy.gif" width="150"><br>' +
+                                '<p>You unlocked mobile developer mode!<br>+10 Mobile Responsiveness</p></div>',
+                            background: '#1a1a1a',
+                            color: '#fff',
+                            confirmButtonColor: '#6E57E0'
+                        });
+                        shakeCount = 0;
+                    }
+                }
+            }
+        });
+        
+        // Hide after 10 seconds
+        setTimeout(() => {
+            mobileFun.style.display = 'none';
+        }, 10000);
+    }
+</script>
+
+<style>
+    /* Add to your style section */
+    .emoji-display {
+        transition: all 0.3s ease;
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+</style>
+<!-- Add this right after opening body tag -->
+<!-- Add this before closing body tag -->
+<audio id="bg-music" loop autoplay style="display: none;">
+    <source src="Kannimaikum Neerathula Tamil Gaana Remix Sivakarthikeyan Version [TubeRipper.com].mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    // Background music that plays automatically (hidden)
+    document.addEventListener('DOMContentLoaded', function() {
+        const music = document.getElementById('bg-music');
+        music.volume = 0.3; // Lower volume (30%)
+        
+        // Try to play music (may be blocked by browsers without user interaction)
+        const playPromise = music.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                // Autoplay was prevented, we'll try again when user interacts
+                document.addEventListener('click', function() {
+                    music.play().catch(e => console.log('Audio play failed:', e));
+                }, { once: true });
+            });
+        }
+    });
+</script>
+
 
 </body>
 </html>

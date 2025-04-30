@@ -46,3 +46,9 @@ document.addEventListener('mousemove', (e) => {
         hero.style.transition = 'transform 0.2s ease-out';
     }
 });
+
+
+console.log("%cLooking for hidden treasures?", "color: #6E57E0; font-size: 18px; font-weight: bold;");
+console.log("%cThis is not the console you're looking for 👋", "color: #fff; font-size: 14px;");
+console.log("%cBut since you're here...", "color: #6E57E0; font-size: 14px;");
+console.log("%cWhy not check out my GitHub instead? https://github.com/Vignesh710-dev", "color: #fff; font-size: 14px;");
