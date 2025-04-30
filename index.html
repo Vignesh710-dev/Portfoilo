@@ -18,11 +18,38 @@
 </head>
 <body class="dark-theme">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top p-2">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-code me-2"></i>Agni Development
+               <img src="ChatGPT_Image_Apr_30__2025__06_32_52_PM-removebg-preview.png" style="width:60px; height: 60px;"class="navbar-logo" 
+               alt="Vignesh Portfolio Logo"/>
             </a>
+            <style>
+                /* Navbar Logo Styles */
+                .navbar-logo {
+                    width: 70px;
+                    height: 70px;
+                    transition: all 0.3s ease;
+                    filter: drop-shadow(0 0 5px rgba(110, 87, 224, 0.5));
+                    border-radius: 50%;
+                    padding: 5px;
+                    background: rgba(110, 87, 224, 0.1);
+                }
+                
+                .navbar-logo:hover {
+                    transform: rotate(15deg) scale(1.1);
+                    filter: drop-shadow(0 0 10px rgba(110, 87, 224, 0.8));
+                    background: rgba(110, 87, 224, 0.2);
+                }
+                
+                /* For mobile view */
+                @media (max-width: 991.98px) {
+                    .navbar-logo {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            </style>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -220,6 +247,48 @@
 
     <!-- About Section -->
     <!-- About Section -->
+    <style>
+        /* Profile image animations */
+        .profile-img-animate {
+            animation: float 6s ease-in-out infinite, pulse 3s ease-in-out infinite;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+    
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotateY(0deg);
+                box-shadow: 0 5px 15px rgba(110, 87, 224, 0.3);
+            }
+            50% {
+                transform: translateY(-20px) rotateY(10deg);
+                box-shadow: 0 15px 30px rgba(110, 87, 224, 0.5);
+            }
+        }
+    
+        @keyframes pulse {
+            0%, 100% {
+                border-color: rgba(110, 87, 224, 0.3);
+            }
+            50% {
+                border-color: rgba(110, 87, 224, 0.7);
+            }
+        }
+    
+        /* Add glow effect on hover */
+        .profile-img-animate:hover {
+            animation: float 6s ease-in-out infinite, pulse 1.5s ease-in-out infinite, glow 2s ease-in-out infinite;
+        }
+    
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(110, 87, 224, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(110, 87, 224, 0.8);
+            }
+        }
+    </style>
 <section id="about" class="py-5 position-relative"data-aos="fade-up">
     <div class="container">
         <div class="about-header text-center mb-5">
@@ -232,7 +301,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <div class="about-avatar  text-center mb-4">
-                        <img src="IMG_20250424_143640.png" alt="Vignesh" class="rounded-circle img-fluid" style="width: 200px; height: 200px; object-fit: cover; border: 5px solid rgba(110, 87, 224, 0.3);">
+                        <img src="IMG_20250424_143640.png" alt="Vignesh" class="rounded-circle img-fluid profile-img-animate" style="width: 200px; height: 200px; object-fit: cover; border: 5px solid rgba(110, 87, 224, 0.3);">
                     </div>
                     <div class="about-content">
                         <p class="lead text-gray mb-4">
@@ -484,73 +553,6 @@
     <!-- ... existing certifications section ... -->
 <!-- ... existing about section ... -->
 
-<!-- Services Section -->
-<section id="services" class="py-5">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <span class="badge badge-glow mb-3">
-                <i class="fas fa-laptop-code me-2"></i>My Services
-            </span>
-            <h2 class="gradient-text display-5 fw-bold">What I Offer</h2>
-        </div>
-        
-        <div class="row g-4">
-            <!-- Service 1 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-card glass-effect p-4 hover-translate h-100">
-                    <div class="service-icon mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-code gradient-text fa-3x"></i>
-                    </div>
-                    <h3 class="h4 mb-3">Web Development</h3>
-                    <p class="text-gray mb-3">
-                        Custom, responsive websites built with modern technologies like React, Node.js, and MongoDB.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Frontend Development</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Backend Integration</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>API Development</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Service 2 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-card glass-effect p-4 hover-translate h-100">
-                    <div class="service-icon mb-4">
-                        <i class="fas fa-mobile-alt gradient-text fa-3x"></i>
-                    </div>
-                    <h3 class="h4 mb-3">Responsive Design</h3>
-                    <p class="text-gray mb-3">
-                        Mobile-first designs that work perfectly on all devices and screen sizes.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Mobile Optimization</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Cross-Browser Compatibility</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Performance Tuning</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Service 3 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-card glass-effect p-4 hover-translate h-100">
-                    <div class="service-icon mb-4">
-                        <i class="fas fa-database gradient-text fa-3x"></i>
-                    </div>
-                    <h3 class="h4 mb-3">Database Solutions</h3>
-                    <p class="text-gray mb-3">
-                        Robust database architectures and efficient data management solutions.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>SQL & NoSQL Databases</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Data Modeling</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Query Optimization</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <style>
     /* Services Section Styles */
@@ -710,6 +712,74 @@
         background: rgba(110, 87, 224, 0.1);
     }
 </style>
+<!-- Services Section -->
+<section id="services" class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="badge badge-glow mb-3">
+                <i class="fas fa-laptop-code me-2"></i>My Services
+            </span>
+            <h2 class="gradient-text display-5 fw-bold">What I Offer</h2>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Service 1 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card glass-effect p-4 hover-translate h-100">
+                    <div class="service-icon mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-code gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="h4 mb-3">Web Development</h3>
+                    <p class="text-gray mb-3">
+                        Custom, responsive websites built with modern technologies like React, Node.js, and MongoDB.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Frontend Development</li>
+                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Backend Integration</li>
+                        <li><i class="fas fa-check-circle gradient-text me-2"></i>API Development</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card glass-effect p-4 hover-translate h-100">
+                    <div class="service-icon mb-4">
+                        <i class="fas fa-mobile-alt gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="h4 mb-3">Responsive Design</h3>
+                    <p class="text-gray mb-3">
+                        Mobile-first designs that work perfectly on all devices and screen sizes.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Mobile Optimization</li>
+                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Cross-Browser Compatibility</li>
+                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Performance Tuning</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card glass-effect p-4 hover-translate h-100">
+                    <div class="service-icon mb-4">
+                        <i class="fas fa-database gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="h4 mb-3">Database Solutions</h3>
+                    <p class="text-gray mb-3">
+                        Robust database architectures and efficient data management solutions.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle gradient-text me-2"></i>SQL & NoSQL Databases</li>
+                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Data Modeling</li>
+                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Query Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ... existing portfolio section ... -->
 
 
@@ -1218,8 +1288,10 @@
         <div class="row">
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <div class="footer-brand d-flex align-items-center mb-4">
-                    <i class="fas fa-code me-2 gradient-text"></i>
-                    <h3 class="mb-0">Agni Development</h3>
+                    <a class="navbar-brand" href="#">
+                        <img src="ChatGPT_Image_Apr_30__2025__06_32_52_PM-removebg-preview.png" style="width:80px; height: 80px;"class="navbar-logo" 
+                        alt="Vignesh Portfolio Logo"/>
+                     </a>
                 </div>
                 <p class="text-gray">Transforming ideas into innovative solutions through code.</p>
                 <div class="social-icons mt-4">
