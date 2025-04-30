@@ -2846,7 +2846,36 @@
         });
     });
 </script>
+<script>
+    // Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
 
+    // Disable keyboard shortcuts for dev tools
+    document.addEventListener('keydown', function(e) {
+        // Disable F12
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+I (Chrome, Edge, Firefox)
+        if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+J (Chrome, Edge)
+        if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+Shift+C (Chrome, Edge)
+        if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+            e.preventDefault();
+        }
+        // Disable Ctrl+U (View source)
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+        }
+    });
+</script>
 
 <!-- Add this before closing body tag -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
