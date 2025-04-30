@@ -2112,26 +2112,55 @@
         });
     </script>
     <!-- Add this before the closin tag -->
+<!-- Replace the existing audio and welcome sound script with this version -->
 <audio id="welcome-sound" preload="auto">
-    <source src="https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3" type="audio/mpeg">
+    <source src="assets/audio/welcome.mp3" type="audio/mpeg">
 </audio>
+
 <script>
-    // Play welcome sound when page loads (every time)
+    // Play welcome sound when page loads
     document.addEventListener('DOMContentLoaded', function() {
         const welcomeSound = document.getElementById('welcome-sound');
-        welcomeSound.volume = 0.3; // Set volume to 30%
+        welcomeSound.volume = 0.3;
         
-        // Play sound after a small delay to ensure it works
-        setTimeout(() => {
-            welcomeSound.play().catch(e => console.log("Autoplay prevented:", e));
-            
-            // Speak welcome message after sound plays
-            const welcomeText = "Welcome to Vignesh Portfolio How Can I help You";
-            const utterance = new SpeechSynthesisUtterance(welcomeText);
-            utterance.rate = 0.9; // Slower speech rate
-            utterance.pitch = 1.0; // Normal pitch
-            speechSynthesis.speak(utterance);
-        }, 500);
+        // Handle autoplay restrictions
+        function playSound() {
+            welcomeSound.play().catch(e => {
+                console.log("Autoplay prevented, showing play button");
+                // Create a play button if autoplay is blocked
+                const playBtn = document.createElement('button');
+                playBtn.innerHTML = '<i class="fas fa-volume-up"></i> Play Welcome Sound';
+                playBtn.style.position = 'fixed';
+                playBtn.style.bottom = '200px';
+                playBtn.style.right = '20px';
+                playBtn.style.zIndex = '9999';
+                playBtn.className = 'btn btn-gradient';
+                playBtn.onclick = function() {
+                    welcomeSound.play();
+                    playBtn.remove();
+                };
+                document.body.appendChild(playBtn);
+            });
+        }
+        
+        // Try playing after user interaction
+        window.addEventListener('click', function firstInteraction() {
+            playSound();
+            window.removeEventListener('click', firstInteraction);
+        }, { once: true });
+        
+        // Speak welcome message
+        const welcomeText = "Welcome to Vignesh Portfolio. How can I help you?";
+        const utterance = new SpeechSynthesisUtterance(welcomeText);
+        utterance.rate = 0.9;
+        utterance.pitch = 1.0;
+        
+        // Wait for sound to be ready
+        welcomeSound.oncanplaythrough = function() {
+            setTimeout(() => {
+                speechSynthesis.speak(utterance);
+            }, 500);
+        };
     });
 </script>
 <source src="audio/welcome.mp3" type="audio/mpeg">
