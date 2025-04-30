@@ -14,46 +14,129 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </head>
 <body class="dark-theme">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container-fluid ">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <i class="fas fa-code me-2"></i>Agni Development
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact-form">Contact</a>
-                    </li>
-                </ul>
-            </div>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#home" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact-form" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Contact</a>
+                </li>
+            </ul>
         </div>
-    </nav>
-
+    </div>
+</nav>
+<style>
+    /* Mobile Navbar Styles */
+    @media (max-width: 991.98px) {
+        .navbar-collapse {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 280px;
+            height: 100vh;
+            padding: 80px 25px 25px;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar-collapse.show {
+            left: 0;
+        }
+        
+        .navbar-nav {
+            flex-direction: column !important;
+        }
+        
+        .nav-item {
+            margin: 10px 0;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-collapse.show .nav-item {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Staggered animation for nav items */
+        .navbar-collapse.show .nav-item:nth-child(1) { transition-delay: 0.1s; }
+        .navbar-collapse.show .nav-item:nth-child(2) { transition-delay: 0.2s; }
+        .navbar-collapse.show .nav-item:nth-child(3) { transition-delay: 0.3s; }
+        .navbar-collapse.show .nav-item:nth-child(4) { transition-delay: 0.4s; }
+        .navbar-collapse.show .nav-item:nth-child(5) { transition-delay: 0.5s; }
+        
+        .nav-link {
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .nav-link:hover {
+            background: rgba(110, 87, 224, 0.3);
+        }
+        
+        /* Close button */
+        .navbar-collapse::before {
+            content: '\f00d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    }
+</style>
+<script>
+    // Close navbar when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        const navbar = document.querySelector('.navbar-collapse');
+        const toggler = document.querySelector('.navbar-toggler');
+        
+        if (navbar.classList.contains('show') && 
+            !event.target.closest('.navbar-collapse') && 
+            !event.target.closest('.navbar-toggler')) {
+            // Close navbar if click is outside
+            const bsCollapse = new bootstrap.Collapse(navbar);
+            bsCollapse.hide();
+        }
+    });
+</script>
     <!-- Hero Section -->
     <section id="home" class="hero-section pt-0">
         <div class="hero-particles"></div>
         <div class="container">
             <div class="row align-items-center min-vh-100">
                 <!-- Hero Section content -->
-                <div class="col-lg-6 order-2 order-lg-1">
+                <div class="col-lg-6 order-2 order-lg-1 mt-5">
                     <div class="hero-content" data-aos="fade-right"data-aos-delay="100">
                         <div class="mb-4">
                             <span class="badge badge-glow animate-pulse">
@@ -109,8 +192,11 @@
                 </script>
                 <div class="col-lg-6 order-1 order-lg-2">
                     <div class="hero-image-wrapper" data-aos="fade-left" data-aos-delay="200">
-                        <div class="blob-animation">
-                            <img src="IMG_20250424_143640.png" alt="Developer" class="hero-img">
+                        <div class="blob-animation d-none d-xl-block">
+                            <img src="IMG_20250424_143640.png" alt="Developer" class="hero-img ">
+                        </div>
+                        <div class="blob-animation d-xl-none">
+                            <img src="IMG_20250424_143640.png" alt="Developer" class="hero-img  mb-4" style="margin-top: 150px;">
                         </div>
                         <div class="floating-elements d-none d-lg-block">
                             <div class="float-item" style="--delay: 0s">
@@ -145,7 +231,7 @@
         <div class="glass-effect p-4 p-md-5 rounded-4">
             <div class="row align-items-center">
                 <div class="col-lg-5 mb-4 mb-lg-0">
-                    <div class="about-avatar text-center mb-4">
+                    <div class="about-avatar  text-center mb-4">
                         <img src="IMG_20250424_143640.png" alt="Vignesh" class="rounded-circle img-fluid" style="width: 200px; height: 200px; object-fit: cover; border: 5px solid rgba(110, 87, 224, 0.3);">
                     </div>
                     <div class="about-content">
@@ -206,14 +292,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="service-item glass-effect p-4 hover-translate">
+                        <div class="service-item glass-effect p-4 mb-4 hover-translate">
                             <div class="d-flex align-items-center">
                                 <div class="service-icon me-4">
-                                    <i class="fas fa-mobile-alt gradient-text fa-2x"></i>
+                                    <i class="fas fa-mobile-alt gradient-text ml-0 fa-2x"></i>
                                 </div>
                                 <div>
                                     <h4>Responsive Design</h4>
-                                    <p class="text-gray mb-0">Creating mobile-friendly interfaces with Bootstrap and CSS Grid/Flexbox</p>
+                                    <p class="text-gray mb-0">Creating mobile-friendly interfaces with Bootstrap and CSS Grid/Flexbox and Dynamic Models</p>
                                 </div>
                             </div>
                         </div>
