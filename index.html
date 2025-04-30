@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <link rel="icon" href="ChatGPT_Image_Apr_30__2025__06_32_52_PM-removebg-preview.png" type="image/png">
     <link href="css/style.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -729,7 +730,7 @@
                     <div class="service-icon mb-4" data-aos="fade-up" data-aos-delay="100">
                         <i class="fas fa-code gradient-text fa-3x"></i>
                     </div>
-                    <h3 class="h4 mb-3">Web Development</h3>
+                    <h3 class="h4 mb-3 text-center">Web Development</h3>
                     <p class="text-gray mb-3">
                         Custom, responsive websites built with modern technologies like React, Node.js, and MongoDB.
                     </p>
@@ -747,7 +748,7 @@
                     <div class="service-icon mb-4">
                         <i class="fas fa-mobile-alt gradient-text fa-3x"></i>
                     </div>
-                    <h3 class="h4 mb-3">Responsive Design</h3>
+                    <h3 class="h4 mb-3 text-center">Responsive Design</h3>
                     <p class="text-gray mb-3">
                         Mobile-first designs that work perfectly on all devices and screen sizes.
                     </p>
@@ -765,7 +766,8 @@
                     <div class="service-icon mb-4">
                         <i class="fas fa-database gradient-text fa-3x"></i>
                     </div>
-                    <h3 class="h4 mb-3">Database Solutions</h3>
+                    <h3 class="h4 mb-3 text-center">Database Solutions</h3>
+                    
                     <p class="text-gray mb-3">
                         Robust database architectures and efficient data management solutions.
                     </p>
@@ -795,18 +797,49 @@
                                 <span class="badge badge-glow mb-3">
                                     <i class="fas fa-code me-2 mt-0"></i> My Skills
                                 </span>
+                            
+                                
                                 <h2 class="gradient-text display-5 fw-bold">Technical Expertise</h2>
+                                
                             </div>
                             
                             <div class="row g-4">
                                 <!-- Frontend Skills -->
+                                <style>
+                                    .skill-header {
+                                        padding-bottom: 15px;
+                                        border-bottom: 1px solid rgba(110, 87, 224, 0.2);
+                                    }
+                                    
+                                    .skill-icon {
+                                        width: 80px;
+                                        padding-right: 16px;
+    padding-left: 22px;
+    padding-top: 22px;
+    padding-bottom: 14px;
+                                        height: 80px;
+                                        display: flex;
+                                        font-size: 40px;
+                                        align-items: center;
+                                        justify-content: center;
+                                        border-radius: 50%;
+                                        background: rgba(110, 87, 224, 0.1);
+                                        transition: all 0.3s ease;
+                                    }
+                                    
+                                    .skill-category:hover .skill-icon {
+                                        transform: rotate(10deg) scale(1.1);
+                                        background: rgba(110, 87, 224, 0.2);
+                                    }
+                                </style>
+                                 
 <div class="col-lg-4">
     <div class="skill-category glass-effect p-4"data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-header mb-4">
-            <div class="skill-icon mb-3">
-                <i class="fas fa-paint-brush gradient-text fa-2x mr-2"></i>
+        <div class="skill-header mb-4 d-flex align-items-center">
+            <div class="skill-icon me-3">
+                <i class="fas fa-laptop-code gradient-text fa-2x "></i>
             </div>
-            <h3 class="gradient-text h4">Frontend</h3>
+            <h3 class="gradient-text h4 mb-0">Frontend</h3>
         </div>
         <div class="skill-list">
             <div class="skill-item mb-4">
@@ -849,11 +882,11 @@
 <!-- Backend Skills -->
 <div class="col-lg-4">
     <div class="skill-category glass-effect p-4"data-aos="fade-up" data-aos-delay="200">
-        <div class="skill-header mb-4">
-            <div class="skill-icon mb-3">
+        <div class="skill-header mb-4 d-flex align-items-center">
+            <div class="skill-icon me-3">
                 <i class="fas fa-server gradient-text fa-2x"></i>
             </div>
-            <h3 class="gradient-text h4">Backend</h3>
+            <h3 class="gradient-text h4 mb-0">Backend</h3>
         </div>
         <div class="skill-list">
             <div class="skill-item mb-4">
@@ -896,11 +929,11 @@
 <!-- Tools & Others -->
 <div class="col-lg-4">
     <div class="skill-category glass-effect p-4"data-aos="fade-up" data-aos-delay="300">
-        <div class="skill-header mb-4">
-            <div class="skill-icon mb-3">
+        <div class="skill-header mb-4 d-flex align-items-center">
+            <div class="skill-icon me-3">
                 <i class="fas fa-tools gradient-text fa-2x"></i>
             </div>
-            <h3 class="gradient-text h4">Tools & Others</h3>
+            <h3 class="gradient-text h4 mb-0">Tools & Others</h3>
         </div>
         <div class="skill-list">
             <div class="skill-item mb-4">
@@ -1174,7 +1207,7 @@
                 <div class="col-md-4">
                     <div class="project-card glass-effect"data-aos="zoom-in" data-aos-delay="200">
                         <div class="project-image">
-                            <img src="vv.jpg" alt="Task Management App" class="img-fluid">
+                            <img src="shoes.jpg" alt="Task Management App" class="img-fluid">
                             <div class="project-overlay">
                                 <a href="https://vignesh710-dev.github.io/Shoes-Wbsite/" class="btn btn-gradient">View Details</a>
                             </div>
@@ -2078,5 +2111,30 @@
             mirror: false
         });
     </script>
+    <!-- Add this before the closin tag -->
+<audio id="welcome-sound" preload="auto">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3" type="audio/mpeg">
+</audio>
+<script>
+    // Play welcome sound when page loads (every time)
+    document.addEventListener('DOMContentLoaded', function() {
+        const welcomeSound = document.getElementById('welcome-sound');
+        welcomeSound.volume = 0.3; // Set volume to 30%
+        
+        // Play sound after a small delay to ensure it works
+        setTimeout(() => {
+            welcomeSound.play().catch(e => console.log("Autoplay prevented:", e));
+            
+            // Speak welcome message after sound plays
+            const welcomeText = "Welcome to Vignesh Portfolio How Can I help You";
+            const utterance = new SpeechSynthesisUtterance(welcomeText);
+            utterance.rate = 0.9; // Slower speech rate
+            utterance.pitch = 1.0; // Normal pitch
+            speechSynthesis.speak(utterance);
+        }, 500);
+    });
+</script>
+<source src="audio/welcome.mp3" type="audio/mpeg">
+
 </body>
 </html>
