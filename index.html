@@ -250,7 +250,7 @@
                             <span class="typed-text"></span>
                         </p>
                         <div class="hero-buttons animate-slide-up">
-                            <a href="Vignesh.CV Ats.pdf" class="btn btn-gradient me-3"download="Vignesh_Resume.pdf">
+                            <a href="Vignesh.CV Ats.pdf" class="btn btn-gradient me-3"download="Vignesh_Resume.pdf"onclick="downloadResume(event)">
                                 <i class="fas fa-laptop-code me-2"></i>Download CV 
                             </a>
                             <a href="#contact-form" class="btn btn-outline-light">
@@ -259,6 +259,27 @@
                         </div>
                     </div>
                 </div>
+                <script>
+                    function downloadResume(e) {
+                        e.preventDefault();
+                        const link = document.createElement('a');
+                        link.href = 'Vignesh.CV Ats.pdf';
+                        link.download = 'Vignesh_Resume.pdf';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        
+                        // Show confirmation
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Download Started',
+                            text: 'Your resume is being downloaded',
+                            background: '#1a1a1a',
+                            color: '#fff',
+                            confirmButtonColor: '#6E57E0'
+                        });
+                    }
+                </script>
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
                         const downloadBtn = document.querySelector('.hero-buttons a[download]');
