@@ -302,12 +302,94 @@
                             <div class="float-item" style="--delay: 3s">
                                 <i class="fab fa-html5"></i>
                             </div>
+                            <div id="live-status" class="text-gradient small mt-3"></div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="futuristic-clock-container">
+        <div class="clock-face">
+            <div class="digit-box" id="hours"></div>
+            <div class="colon">:</div>
+            <div class="digit-box" id="minutes"></div>
+            <div class="colon">:</div>
+            <div class="digit-box" id="seconds"></div>
+        </div>
+        <div class="clock-date" id="f-date"></div>
+    </div>
+    
+    <style>
+    .futuristic-clock-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0;
+    }
+    
+    .clock-face {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .digit-box {
+        width: 60px;
+        height: 80px;
+        background: rgba(110, 87, 224, 0.1);
+        border: 1px solid rgba(110, 87, 224, 0.3);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #6E57E0;
+        text-shadow: 0 0 10px rgba(110, 87, 224, 0.7);
+        transition: all 0.3s ease;
+    }
+    
+    .colon {
+        font-size: 2rem;
+        color: #9B6DFF;
+        margin-bottom: 10px;
+    }
+    
+    .clock-date {
+        margin-top: 10px;
+        font-size: 1rem;
+        color: rgba(255,255,255,0.7);
+        letter-spacing: 1px;
+    }
+    </style>
+    
+    <script>
+    function updateAdvancedClock() {
+        const now = new Date();
+        
+        // Update time
+        document.getElementById('hours').textContent = now.getHours().toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = now.getMinutes().toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = now.getSeconds().toString().padStart(2, '0');
+        
+        // Update date
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('f-date').textContent = now.toLocaleDateString(undefined, options);
+        
+        // Add pulse effect to seconds
+        const secondsBox = document.getElementById('seconds');
+        secondsBox.style.boxShadow = '0 0 15px rgba(110, 87, 224, 0.7)';
+        setTimeout(() => {
+            secondsBox.style.boxShadow = 'none';
+        }, 300);
+    }
+    
+    setInterval(updateAdvancedClock, 1000);
+    updateAdvancedClock(); // Initial call
+    </script>
+    
 
     <!-- About Section -->
     <!-- About Section -->
@@ -778,6 +860,331 @@
     }
 </style>
 <!-- Services Section -->
+ <!-- Add this after your portfolio section -->
+<section id="timeline" class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="badge badge-glow mb-3">
+                <i class="fas fa-code-branch me-2"></i>My Journey
+            </span>
+            <h2 class="gradient-text display-5 fw-bold">Coding Milestones</h2>
+            <p class="text-gray">Key moments in my development career</p>
+        </div>
+
+        <div class="timeline-container">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-content glass-effect">
+                    <div class="timeline-date">2024</div>
+                    <h3> Started Web Development</h3>
+                    <p>Began learning HTML, CSS and JavaScript through NxtWave  </p>
+                    <div class="timeline-badge">
+                        
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-content glass-effect">
+                    <div class="timeline-date">2025</div>
+                    <h3>React Certification</h3>
+                    <p>Completed React Web Development certification from Acno soft</p>
+                    <div class="timeline-badge">
+                        <i class="fab fa-react"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="timeline-content glass-effect">
+                    <div class="timeline-date">202?</div>
+                    <h3> First Freelance Project</h3>
+                    <p>I'm Looking for a  client do you have need website contanct me  </p>
+                    <div class="timeline-badge">
+                      
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more timeline items as needed -->
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Timeline Styles */
+    .timeline-container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .timeline-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 3px;
+        background: rgba(110, 87, 224, 0.2);
+        transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+        padding: 20px 0;
+        position: relative;
+    }
+    
+    .timeline-content {
+        position: relative;
+        padding: 20px;
+        border-radius: 15px;
+        width: calc(50% - 40px);
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-left: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-right: auto;
+    }
+    
+    .timeline-date {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(110, 87, 224, 0.2);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-badge {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(110, 87, 224, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-badge {
+        left: -60px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-badge {
+        right: -60px;
+    }
+    
+    @media (max-width: 768px) {
+        .timeline-container::before {
+            left: 20px;
+        }
+        
+        .timeline-content {
+            width: calc(100% - 80px);
+            margin-left: 60px !important;
+        }
+        
+        .timeline-badge {
+            left: -50px !important;
+            right: auto !important;
+        }
+        
+        .timeline-date {
+            left: 20px;
+            transform: none;
+        }
+    }
+</style>
+
+<section id="challenges" class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="badge badge-glow mb-3">
+                <i class="fas fa-trophy me-2"></i>Achievements
+            </span>
+            <h2 class="gradient-text display-5 fw-bold">Coding Challenges</h2>
+            <p class="text-gray">My problem-solving journey</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Challenge 1 -->
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="challenge-card glass-effect p-4 text-center h-100">
+                    <div class="challenge-badge mb-3">
+                        <i class="fas fa-medal gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="h5">LeetCode</h3>
+                    <p class="text-gray small">1165+ Problems Solved</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Challenge 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="challenge-card glass-effect p-4 text-center h-100">
+                    <div class="challenge-badge mb-3">
+                        <i class="fas fa-code gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="h5">Unit</h3>
+                    <p class="text-gray small">319 units complete</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Challenge 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="challenge-card glass-effect p-4 text-center h-100">
+                    <div class="challenge-badge mb-3">
+                        <i class="fas fa-laptop-code gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="h5">Learing Time Spend</h3>
+                    <p class="text-gray small">10165 min</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Replace the challenges section with this enhanced version -->
+<style>
+    /* Coding Challenges Animation Styles */
+    .challenge-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform: translateY(20px);
+        opacity: 0;
+        animation: cardRise 0.8s forwards;
+        perspective: 1000px;
+        border: 1px solid rgba(110, 87, 224, 0.2);
+    }
+    
+    @keyframes cardRise {
+        0% {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    .challenge-card:hover {
+        transform: translateY(-5px) rotateX(5deg);
+        box-shadow: 0 15px 30px rgba(110, 87, 224, 0.3);
+    }
+    
+    .challenge-badge {
+        transition: all 0.5s ease;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .challenge-card:hover .challenge-badge {
+        animation: badgePulse 2s ease infinite;
+    }
+    
+    @keyframes badgePulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+    
+    .progress {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #6E57E0, #9B6DFF);
+        position: relative;
+        transition: width 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .progress-bar::after {
+        content: '';
+        position: absolute;
+        right: -5px;
+        top: -3px;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(110, 87, 224, 0.8);
+        transform: scale(0);
+        transition: transform 0.3s ease;
+    }
+    
+    .challenge-card:hover .progress-bar::after {
+        transform: scale(1);
+    }
+    
+    /* Staggered animations */
+    .challenge-card:nth-child(1) { animation-delay: 0.1s; }
+    .challenge-card:nth-child(2) { animation-delay: 0.3s; }
+    .challenge-card:nth-child(3) { animation-delay: 0.5s; }
+</style>
+
+<!-- Add this JavaScript for progress bar animation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate progress bars on scroll
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        const animateProgressBars = () => {
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        };
+        
+        // Run on page load
+        animateProgressBars();
+        
+        // Also run when section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateProgressBars();
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(document.querySelector('#challenges'));
+    });
+</script>
+<div class="d-none d-lg-block">
 <section id="services" class="py-5">
     <div class="container">
         <div class="section-header text-center mb-5">
@@ -845,7 +1252,78 @@
         </div>
     </div>
 </section>
-
+</div>
+<!--mobile-->
+<div class="d-block d-lg-none">
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="badge badge-glow mb-3">
+                    <i class="fas fa-laptop-code me-2"></i>My Services
+                </span>
+                <h2 class="gradient-text display-5 fw-bold">What I Offer</h2>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card glass-effect p-4 hover-translate h-100">
+                        <div class="service-icon mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-code gradient-text fa-3x"></i>
+                        </div>
+                        <h3 class="h4 mb-3 text-center">Web Development</h3>
+                        <p class="text-gray mb-3 text-center">
+                            Custom, responsive websites built with modern technologies like React, Node.js, and MongoDB.
+                        </p>
+                        <ul class="service-features text-center">
+                            <li><i class="fas fa-check-circle gradient-text me-2"></i>Frontend Development</li>
+                            <li><i class="fas fa-check-circle gradient-text me-2"></i>Backend Integration</li>
+                            <li><i class="fas fa-check-circle gradient-text me-2"></i>API Development</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card glass-effect p-4 hover-translate h-100">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-mobile-alt gradient-text fa-3x"></i>
+                        </div>
+                        <h3 class="h4 mb-3 text-center">Responsive Design</h3>
+                        <p class="text-gray mb-3 text-center">
+                            Mobile-first designs that work perfectly on all devices and screen sizes.
+                        </p>
+                        <ul class="service-features text-center">
+                            <li><i class="fas fa-check-circle gradient-text me-2"></i>Mobile Optimization</li>
+                            <li><i class="fas fa-check-circle gradient-text me-2"></i>Cross-Browser Compatibility</li>
+                            <li><i class="fas fa-check-circle gradient-text me-2"></i>Performance Tuning</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card glass-effect p-4 hover-translate h-100">
+                        <div class="service-icon mb-4">
+                            <i class="fas fa-database gradient-text fa-3x"></i>
+                        </div>
+                        <h3 class="h4 mb-3 text-center">Database Solutions</h3>
+                        
+                        <p class="text-gray mb-3 text-center">
+                            Robust database architectures and efficient data management solutions.
+                        </p>
+                        <ul class="service-features text-center">
+                            <li><i class="fas fa-check-circle gradient-text me-2"></i>SQL & NoSQL Databases</li>
+                            <li><i class="fas fa-check-circle gradient-text me-2"></i>Data Modeling</li>
+                            <li><i class="fas fa-check-circle gradient-text me-2"></i>Query Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</div>
 <!-- ... existing portfolio section ... -->
 
 
@@ -1384,7 +1862,33 @@
         position: relative;
     }
         </style>
+<!-- Add near your project titles -->
+<div class="project-status-badge">
+    <span class="badge badge-live">Live</span>
+    <span class="badge badge-github">GitHub</span>
+</div>
 
+<style>
+.project-status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 5px;
+}
+
+.badge-live {
+    background: rgba(40, 167, 69, 0.2);
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.badge-github {
+    background: rgba(23, 21, 21, 0.2);
+    color: #171515;
+    border: 1px solid #171515;
+}
+</style>
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-5">
         <div class="container">
@@ -1480,6 +1984,7 @@
         </div>
     </section>
 
+<!-- Add after portfolio section -->
     <!-- Contact Section -->
     <!-- ... existing code ... -->
 
@@ -1575,14 +2080,16 @@
 </script>
 <!-- New Footer Section -->
 <!-- ... existing code ... -->
+<!-- Add near your visitor counter in footer -->
 
+<!-- Add where you want the clock to appear -->
 <!-- New Footer Section -->
 <footer class="footer-section py-5 position-relative">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <div class="footer-brand d-flex align-items-center mb-4 d-none d-lg-block">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand d-flex flex-row justify-content-center" href="#">
                         <img src="ChatGPT_Image_Apr_30__2025__06_32_52_PM-removebg-preview.png" style="width:80px; height: 80px;"class="navbar-logo" 
                         alt="Vignesh Portfolio Logo"/>
                      </a>
@@ -1642,6 +2149,9 @@
                         <span>vigneshvcoder<br>@gmail.com</span>
                     </li>
                 </ul>
+                <!-- Add near copyright text -->
+<div id="visitor-counter" class="small"></div>
+<div id="current-time" class="small mt-2"></div>
             </div>
         </div>
     </div>
@@ -2729,44 +3239,49 @@
 </audio>
 
 <script>
-    // Improved music player with better reliability
-    document.addEventListener('DOMContentLoaded', function() {
-        const music = document.getElementById('bg-music');
-        music.volume = 0.2; // Lower volume (30%)
+   // Replace your existing music player script with this
+document.addEventListener('DOMContentLoaded', function() {
+    const music = document.getElementById('bg-music');
+    music.volume = 0.3;
+    
+    function playMusic() {
+        const promise = music.play();
         
-        // Function to handle music playback
-        function playMusic() {
-            const promise = music.play();
-            
-            if (promise !== undefined) {
-                promise.catch(error => {
-                    // If autoplay fails, wait for user interaction
-                    const playOnInteraction = () => {
-                        music.play()
-                            .then(() => {
-                                console.log("Music started after interaction");
-                                document.removeEventListener('click', playOnInteraction);
-                                document.removeEventListener('keydown', playOnInteraction);
-                            })
-                            .catch(e => console.log("Playback failed:", e));
-                    };
-                    
-                    document.addEventListener('click', playOnInteraction, { once: true });
-                    document.addEventListener('keydown', playOnInteraction, { once: true });
-                });
-            }
+        if (promise !== undefined) {
+            promise.catch(error => {
+                const playOnInteraction = () => {
+                    music.play()
+                        .then(() => {
+                            console.log("Music started after interaction");
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('keydown', playOnInteraction);
+                        })
+                        .catch(e => console.log("Playback failed:", e));
+                };
+                
+                document.addEventListener('click', playOnInteraction, { once: true });
+                document.addEventListener('keydown', playOnInteraction, { once: true });
+            });
         }
+    }
 
-        // Try to play immediately
-        playMusic();
-        
-        // Also try to play when page becomes visible
-        document.addEventListener('visibilitychange', function() {
-            if (document.visibilityState === 'visible') {
-                playMusic();
-            }
-        });
+    // Play when page is visible
+    playMusic();
+    
+    // Pause when page becomes hidden
+    document.addEventListener('visibilitychange', function() {
+        if (document.visibilityState === 'visible') {
+            playMusic();
+        } else {
+            music.pause();
+        }
     });
+
+    // Pause when user navigates away
+    window.addEventListener('beforeunload', function() {
+        music.pause();
+    });
+});
 </script>
 
 
@@ -3000,5 +3515,7 @@ form.addEventListener('submit', async function(event) {
 <!-- Add this before closing body tag -->
  
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+
 </body>
 </html>
