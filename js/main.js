@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
    const whatsappBtn = document.querySelector('.whatsapp-btn');
    if(whatsappBtn) {
        whatsappBtn.addEventListener('click', function() {
-           const message = "Hello! Thank you for visiting my portfolio. Feel free to contact me for any inquiries!";
+           const message = "i did watch your portfolio website.I want one website you can create for  me ? ";
            const phoneNumber = "919080700642";
            
            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
