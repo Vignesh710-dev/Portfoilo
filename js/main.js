@@ -52,3 +52,91 @@ console.log("%cLooking for hidden treasures?", "color: #6E57E0; font-size: 18px;
 console.log("%cThis is not the console you're looking for 👋", "color: #fff; font-size: 14px;");
 console.log("%cBut since you're here...", "color: #6E57E0; font-size: 14px;");
 console.log("%cWhy not check out my GitHub instead? https://github.com/Vignesh710-dev", "color: #fff; font-size: 14px;");
+
+// Add this at the beginning of your main.js file
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if this is the first visit
+   // Add WhatsApp button click handler
+   const whatsappBtn = document.querySelector('.whatsapp-btn');
+   if(whatsappBtn) {
+       whatsappBtn.addEventListener('click', function() {
+           const message = "Hello! Thank you for visiting my portfolio. Feel free to contact me for any inquiries!";
+           const phoneNumber = "919080700642";
+           
+           window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+           
+           // Track the WhatsApp click
+           gtag('event', 'whatsapp_click', {
+               'event_category': 'Contact',
+               'event_label': 'WhatsApp Message'
+           });
+       });
+   }
+});
+// Add after your existing DOMContentLoaded event
+document.addEventListener('DOMContentLoaded', function() {
+    // Track CV downloads
+    const cvButton = document.querySelector('a[download="Vignesh_Resume.pdf"]');
+    if(cvButton) {
+        cvButton.addEventListener('click', function() {
+            gtag('event', 'download', {
+                'event_category': 'CV',
+                'event_label': 'Resume Download'
+            });
+        });
+    }
+
+    // Track contact form submissions
+    const contactForm = document.querySelector('#contact-form');
+    if(contactForm) {
+        contactForm.addEventListener('submit', function() {
+            gtag('event', 'submit', {
+                'event_category': 'Contact',
+                'event_label': 'Form Submission'
+            });
+        });
+    }
+
+    // Track project clicks
+    document.querySelectorAll('.project-card a').forEach(link => {
+        link.addEventListener('click', function() {
+            gtag('event', 'click', {
+                'event_category': 'Projects',
+                'event_label': this.textContent || 'Project Link'
+            });
+        });
+    });
+});
+// Add after your existing tracking code
+document.addEventListener('DOMContentLoaded', function() {
+    // Track scroll depth
+    let scrollDepths = [25, 50, 75, 100];
+    let scrolledDepths = new Set();
+
+    window.addEventListener('scroll', function() {
+        const scrollPercent = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight * 100;
+        
+        scrollDepths.forEach(depth => {
+            if (scrollPercent >= depth && !scrolledDepths.has(depth)) {
+                scrolledDepths.add(depth);
+                gtag('event', 'scroll_depth', {
+                    'event_category': 'Engagement',
+                    'event_label': `Scrolled ${depth}%`,
+                    'value': depth
+                });
+            }
+        });
+    });
+
+    // Track time spent on page
+    let timeIntervals = [30, 60, 120, 300]; // seconds
+    timeIntervals.forEach(interval => {
+        setTimeout(() => {
+            gtag('event', 'time_spent', {
+                'event_category': 'Engagement',
+                'event_label': `Spent ${interval} seconds`,
+                'value': interval
+            });
+        }, interval * 1000);
+    });
+});
