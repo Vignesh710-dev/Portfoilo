@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.5">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
     <title>Vignesh F-S Dev  Portfolio</title>
@@ -230,117 +230,121 @@
         }
     });
 </script>
-    <!-- Hero Section -->
-    <section id="home" class="hero-section pt-0">
-        <div class="hero-particles"></div>
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <!-- Hero Section content -->
-                <div class="col-lg-6 order-2 order-lg-1 mt-5">
-                    <div class="hero-content" data-aos="fade-right"data-aos-delay="100">
-                        <div class="mb-4">
-                            <span class="badge badge-glow animate-pulse">
-                                <i class="fas fa-code me-2"></i>Full Stack Developer
-                            </span>
-                        </div>
-                        <h1 class="hero-title animate-slide-up">
-                            <span id="greeting-text"></span>
-                            <div class="typing-text" id="typing-text"></div>
-                        </h1>
-                        <p class="hero-description animate-fade-in">
-                            <span class="highlight-text">Transforming ideas</span> into 
-                            <span class="highlight-text">innovative solutions</span> through code. 
-                            <span class="typed-text"></span>
-                        </p>
-                        <p class="hero-description animate-fade-in">
-                            <span class="mr-4">Phone:9080700642</span>
-                            <span>|</span> 
-                            <span class="">Email:vigneshvcoder@gmail.com</span> 
-                            <span class="typed-text"></span>
-                        </p>
-                        <div class="hero-buttons animate-slide-up">
-                            <a href="Vignesh.CV Ats.pdf" class="btn btn-gradient me-3"download="Vignesh_Resume.pdf"onclick="downloadResume(event)">
-                                <i class="fas fa-laptop-code me-2"></i>Download CV 
-                            </a>
-                            <a href="" target="_blank" class="btn btn-outline-light whatsapp-btn">
-                                <i class="fab fa-whatsapp me-2"></i>Let's Talk
-                            </a>  
-                        </div>
-                       
+    
+<section id="home" class="hero-section pt-0">
+    <div class="hero-particles"></div>
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <!-- Hero Section content -->
+            <div class="col-lg-6 order-2 order-lg-1 mt-5">
+                <div class="hero-content" data-aos="fade-right"data-aos-delay="100">
+                    <div class="mb-4">
+                        <span class="badge badge-glow animate-pulse">
+                            <i class="fas fa-code me-2"></i>Full Stack Developer
+                        </span>
                     </div>
+                    <h1 class="hero-title animate-slide-up">
+                        <span id="greeting-text"></span>
+                        <div class="typing-text" id="typing-text"></div>
+                    </h1>
+                    <p class="hero-description animate-fade-in">
+                        <span class="highlight-text">Transforming ideas</span> into 
+                        <span class="highlight-text">innovative solutions</span> through code. 
+                        <span class="typed-text"></span>
+                    </p>
+                    <p class="hero-description animate-fade-in">
+                        <span class="mr-4">Phone:9080700642</span>
+                        <span>|</span> 
+                        <span class="">Email:vigneshvcoder@gmail.com</span> 
+                        <span class="typed-text"></span>
+                    </p>
+                    <div class="hero-buttons animate-slide-up">
+                        <a href="Vignesh.CV Ats.pdf" class="btn btn-gradient me-3"download="Vignesh_Resume.pdf"onclick="downloadResume(event)">
+                            <i class="fas fa-laptop-code me-2"></i>Download CV 
+                        </a>
+                        <a href="" target="_blank" class="btn btn-outline-light whatsapp-btn">
+                            <i class="fab fa-whatsapp me-2"></i> Get Free Consultation
+                        </a>  
+                    </div>
+                   
                 </div>
-                <script>
-                    function downloadResume(e) {
-                        e.preventDefault();
-                        const link = document.createElement('a');
-                        link.href = 'Vignesh.CV Ats.pdf';
-                        link.download = 'Vignesh_Resume.pdf';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                        
-                        // Show confirmation
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Download Started',
-                            text: 'Your resume is being downloaded',
-                            background: '#1a1a1a',
-                            color: '#fff',
-                            confirmButtonColor: '#6E57E0'
-                        });
-                    }
-                </script>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const downloadBtn = document.querySelector('.hero-buttons a[download]');
-                        
-                        if(downloadBtn) {
-                            downloadBtn.addEventListener('click', function() {
-                                // Optional: Track download event
-                                console.log('Resume download initiated');
-                                
-                                // Optional: Show confirmation
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Download Started',
-                                    text: 'Your resume is being downloaded',
-                                    background: '#1a1a1a',
-                                    color: '#fff',
-                                    confirmButtonColor: '#6E57E0'
-                                });
-                            });
-                        }
-                    });
-                </script>
-                <div class="col-lg-6 order-1 order-lg-2">
-                    <div class="hero-image-wrapper" data-aos="fade-left" data-aos-delay="200">
-                        <div class="blob-animation d-none d-xl-block">
-                            <img src="IMG_20250424_143640.png" alt="Developer" class="hero-img ">
-                        </div>
-                        <div class="blob-animation d-xl-none">
-                            <img src="IMG_20250424_143640.png" alt="Developer" class="hero-img  mb-4" style="margin-top: 150px;">
-                        </div>
-                        <div class="floating-elements d-none d-lg-block">
-                            <div class="float-item" style="--delay: 0s">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <div class="float-item" style="--delay: 1s">
-                                <i class="fab fa-node-js"></i>
-                            </div>
-                            <div class="float-item" style="--delay: 2s">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <div class="float-item" style="--delay: 3s">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <div id="live-status" class="text-gradient small mt-3"></div>
-                        </div>
-                        
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2">
+                <div class="hero-image-wrapper" data-aos="fade-left" data-aos-delay="200">
+                    <div class="blob-animation d-none d-xl-block">
+                        <img src="IMG_20250424_143640.png" alt="Developer" class="hero-img ">
                     </div>
+                    <div class="blob-animation d-xl-none">
+                        <img src="IMG_20250424_143640.png" alt="Developer" class="hero-img  mb-4" style="margin-top: 150px;">
+                    </div>
+                    <div class="floating-elements d-none d-lg-block">
+                        <div class="float-item" style="--delay: 0s">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="float-item" style="--delay: 1s">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="float-item" style="--delay: 2s">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="float-item" style="--delay: 3s">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <div id="live-status" class="text-gradient small mt-3"></div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- Add services pricing table -->
+
+<!-- Add client testimonials section -->
+    <script>
+        function downloadResume(e) {
+            e.preventDefault();
+            const link = document.createElement('a');
+            link.href = 'Vignesh.CV Ats.pdf';
+            link.download = 'Vignesh_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show confirmation
+            Swal.fire({
+                icon: 'success',
+                title: 'Download Started',
+                text: 'Your resume is being downloaded',
+                background: '#1a1a1a',
+                color: '#fff',
+                confirmButtonColor: '#6E57E0'
+            });
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const downloadBtn = document.querySelector('.hero-buttons a[download]');
+            
+            if(downloadBtn) {
+                downloadBtn.addEventListener('click', function() {
+                    // Optional: Track download event
+                    console.log('Resume download initiated');
+                    
+                    // Optional: Show confirmation
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Download Started',
+                        text: 'Your resume is being downloaded',
+                        background: '#1a1a1a',
+                        color: '#fff',
+                        confirmButtonColor: '#6E57E0'
+                    });
+                });
+            }
+        });
+    </script>
+  
     <div class="futuristic-clock-container">
         <div class="clock-face">
             <div class="digit-box" id="hours"></div>
@@ -892,400 +896,10 @@
 </style>
 <!-- Services Section -->
  <!-- Add this after your portfolio section -->
-<section id="timeline" class="py-5">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <span class="badge badge-glow mb-3">
-                <i class="fas fa-code-branch me-2"></i>My Journey
-            </span>
-            <h2 class="gradient-text display-5 fw-bold">Coding Milestones</h2>
-            <p class="text-gray">Key moments in my development career</p>
-        </div>
 
-        <div class="timeline-container">
-            <!-- Timeline Item 1 -->
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="timeline-content glass-effect">
-                    <div class="timeline-date">2024</div>
-                    <h3> Started Web Development</h3>
-                    <p>Began learning HTML, CSS and JavaScript through NxtWave  </p>
-                    <div class="timeline-badge">
-                        
-                        <i class="fas fa-code"></i>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Timeline Item 2 -->
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="timeline-content glass-effect">
-                    <div class="timeline-date">2025</div>
-                    <h3>React Certification</h3>
-                    <p>Completed React Web Development certification from Acno soft</p>
-                    <div class="timeline-badge">
-                        <i class="fab fa-react"></i>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Timeline Item 3 -->
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="timeline-content glass-effect">
-                    <div class="timeline-date">202?</div>
-                    <h3> First Freelance Project</h3>
-                    <p>I'm Looking for a  client do you have need website contanct me  </p>
-                    <div class="timeline-badge">
-                      
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add more timeline items as needed -->
-        </div>
-    </div>
-</section>
-
-<style>
-    /* Timeline Styles */
-    .timeline-container {
-        position: relative;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    
-    .timeline-container::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 50%;
-        width: 3px;
-        background: rgba(110, 87, 224, 0.2);
-        transform: translateX(-50%);
-    }
-    
-    .timeline-item {
-        padding: 20px 0;
-        position: relative;
-    }
-    
-    .timeline-content {
-        position: relative;
-        padding: 20px;
-        border-radius: 15px;
-        width: calc(50% - 40px);
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-content {
-        margin-left: auto;
-    }
-    
-    .timeline-item:nth-child(even) .timeline-content {
-        margin-right: auto;
-    }
-    
-    .timeline-date {
-        position: absolute;
-        top: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(110, 87, 224, 0.2);
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-    }
-    
-    .timeline-badge {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: rgba(110, 87, 224, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-badge {
-        left: -60px;
-    }
-    
-    .timeline-item:nth-child(even) .timeline-badge {
-        right: -60px;
-    }
-    
-    @media (max-width: 768px) {
-        .timeline-container::before {
-            left: 20px;
-        }
-        
-        .timeline-content {
-            width: calc(100% - 80px);
-            margin-left: 60px !important;
-        }
-        
-        .timeline-badge {
-            left: -50px !important;
-            right: auto !important;
-        }
-        
-        .timeline-date {
-            left: 20px;
-            transform: none;
-        }
-    }
-</style>
-
-<section id="challenges" class="py-5">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <span class="badge badge-glow mb-3">
-                <i class="fas fa-trophy me-2"></i>Achievements
-            </span>
-            <h2 class="gradient-text display-5 fw-bold">Coding Challenges</h2>
-            <p class="text-gray">My problem-solving journey</p>
-        </div>
-
-        <div class="row g-4">
-            <!-- Challenge 1 -->
-            <div class="col-md-4" data-aos="fade-up">
-                <div class="challenge-card glass-effect p-4 text-center h-100">
-                    <div class="challenge-badge mb-3">
-                        <i class="fas fa-medal gradient-text fa-3x"></i>
-                    </div>
-                    <h3 class="h5">LeetCode</h3>
-                    <p class="text-gray small">1165+ Problems Solved</p>
-                    <div class="progress mt-3" style="height: 8px;">
-                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 75%"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Challenge 2 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="challenge-card glass-effect p-4 text-center h-100">
-                    <div class="challenge-badge mb-3">
-                        <i class="fas fa-code gradient-text fa-3x"></i>
-                    </div>
-                    <h3 class="h5">Unit</h3>
-                    <p class="text-gray small">319 units complete</p>
-                    <div class="progress mt-3" style="height: 8px;">
-                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 90%"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Challenge 3 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="challenge-card glass-effect p-4 text-center h-100">
-                    <div class="challenge-badge mb-3">
-                        <i class="fas fa-laptop-code gradient-text fa-3x"></i>
-                    </div>
-                    <h3 class="h5">Learing Time Spend</h3>
-                    <p class="text-gray small">10165 min</p>
-                    <div class="progress mt-3" style="height: 8px;">
-                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 60%"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Replace the challenges section with this enhanced version -->
-<style>
-    /* Coding Challenges Animation Styles */
-    .challenge-card {
-        position: relative;
-        overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-        transform: translateY(20px);
-        opacity: 0;
-        animation: cardRise 0.8s forwards;
-        perspective: 1000px;
-        border: 1px solid rgba(110, 87, 224, 0.2);
-    }
-    
-    @keyframes cardRise {
-        0% {
-            opacity: 0;
-            transform: translateY(20px) scale(0.95);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-    
-    .challenge-card:hover {
-        transform: translateY(-5px) rotateX(5deg);
-        box-shadow: 0 15px 30px rgba(110, 87, 224, 0.3);
-    }
-    
-    .challenge-badge {
-        transition: all 0.5s ease;
-        position: relative;
-        z-index: 2;
-    }
-    
-    .challenge-card:hover .challenge-badge {
-        animation: badgePulse 2s ease infinite;
-    }
-    
-    @keyframes badgePulse {
-        0%, 100% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.1);
-        }
-    }
-    
-    .progress {
-        height: 8px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .progress-bar {
-        height: 100%;
-        background: linear-gradient(90deg, #6E57E0, #9B6DFF);
-        position: relative;
-        transition: width 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-    
-    .progress-bar::after {
-        content: '';
-        position: absolute;
-        right: -5px;
-        top: -3px;
-        width: 14px;
-        height: 14px;
-        background: #fff;
-        border-radius: 50%;
-        box-shadow: 0 0 15px rgba(110, 87, 224, 0.8);
-        transform: scale(0);
-        transition: transform 0.3s ease;
-    }
-    
-    .challenge-card:hover .progress-bar::after {
-        transform: scale(1);
-    }
-    
-    /* Staggered animations */
-    .challenge-card:nth-child(1) { animation-delay: 0.1s; }
-    .challenge-card:nth-child(2) { animation-delay: 0.3s; }
-    .challenge-card:nth-child(3) { animation-delay: 0.5s; }
-</style>
-
-<!-- Add this JavaScript for progress bar animation -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Animate progress bars on scroll
-        const progressBars = document.querySelectorAll('.progress-bar');
-        
-        const animateProgressBars = () => {
-            progressBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 100);
-            });
-        };
-        
-        // Run on page load
-        animateProgressBars();
-        
-        // Also run when section comes into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateProgressBars();
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        observer.observe(document.querySelector('#challenges'));
-    });
-</script>
 <div class="d-none d-lg-block">
-<section id="services" class="py-5">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <span class="badge badge-glow mb-3">
-                <i class="fas fa-laptop-code me-2"></i>My Services
-            </span>
-            <h2 class="gradient-text display-5 fw-bold">What I Offer</h2>
-        </div>
-        
-        <div class="row g-4">
-            <!-- Service 1 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-card glass-effect p-4 hover-translate h-100">
-                    <div class="service-icon mb-4" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-code gradient-text fa-3x"></i>
-                    </div>
-                    <h3 class="h4 mb-3 text-center">Web Development</h3>
-                    <p class="text-gray mb-3">
-                        Custom, responsive websites built with modern technologies like React, Node.js, and MongoDB.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Frontend Development</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Backend Integration</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>API Development</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Service 2 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-card glass-effect p-4 hover-translate h-100">
-                    <div class="service-icon mb-4">
-                        <i class="fas fa-mobile-alt gradient-text fa-3x"></i>
-                    </div>
-                    <h3 class="h4 mb-3 text-center">Responsive Design</h3>
-                    <p class="text-gray mb-3">
-                        Mobile-first designs that work perfectly on all devices and screen sizes.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Mobile Optimization</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Cross-Browser Compatibility</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Performance Tuning</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <!-- Service 3 -->
-            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-card glass-effect p-4 hover-translate h-100">
-                    <div class="service-icon mb-4">
-                        <i class="fas fa-database gradient-text fa-3x"></i>
-                    </div>
-                    <h3 class="h4 mb-3 text-center">Database Solutions</h3>
-                    
-                    <p class="text-gray mb-3">
-                        Robust database architectures and efficient data management solutions.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>SQL & NoSQL Databases</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Data Modeling</li>
-                        <li><i class="fas fa-check-circle gradient-text me-2"></i>Query Optimization</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-</div>
-<!--mobile-->
-<div class="d-block d-lg-none">
     <section id="services" class="py-5">
         <div class="container">
             <div class="section-header text-center mb-5">
@@ -1303,10 +917,10 @@
                             <i class="fas fa-code gradient-text fa-3x"></i>
                         </div>
                         <h3 class="h4 mb-3 text-center">Web Development</h3>
-                        <p class="text-gray mb-3 text-center">
+                        <p class="text-gray mb-3">
                             Custom, responsive websites built with modern technologies like React, Node.js, and MongoDB.
                         </p>
-                        <ul class="service-features text-center">
+                        <ul class="service-features">
                             <li><i class="fas fa-check-circle gradient-text me-2"></i>Frontend Development</li>
                             <li><i class="fas fa-check-circle gradient-text me-2"></i>Backend Integration</li>
                             <li><i class="fas fa-check-circle gradient-text me-2"></i>API Development</li>
@@ -1321,10 +935,10 @@
                             <i class="fas fa-mobile-alt gradient-text fa-3x"></i>
                         </div>
                         <h3 class="h4 mb-3 text-center">Responsive Design</h3>
-                        <p class="text-gray mb-3 text-center">
+                        <p class="text-gray mb-3">
                             Mobile-first designs that work perfectly on all devices and screen sizes.
                         </p>
-                        <ul class="service-features text-center">
+                        <ul class="service-features">
                             <li><i class="fas fa-check-circle gradient-text me-2"></i>Mobile Optimization</li>
                             <li><i class="fas fa-check-circle gradient-text me-2"></i>Cross-Browser Compatibility</li>
                             <li><i class="fas fa-check-circle gradient-text me-2"></i>Performance Tuning</li>
@@ -1340,10 +954,10 @@
                         </div>
                         <h3 class="h4 mb-3 text-center">Database Solutions</h3>
                         
-                        <p class="text-gray mb-3 text-center">
+                        <p class="text-gray mb-3">
                             Robust database architectures and efficient data management solutions.
                         </p>
-                        <ul class="service-features text-center">
+                        <ul class="service-features">
                             <li><i class="fas fa-check-circle gradient-text me-2"></i>SQL & NoSQL Databases</li>
                             <li><i class="fas fa-check-circle gradient-text me-2"></i>Data Modeling</li>
                             <li><i class="fas fa-check-circle gradient-text me-2"></i>Query Optimization</li>
@@ -1353,12 +967,80 @@
             </div>
         </div>
     </section>
+    </div>
     
-</div>
-<!-- ... existing portfolio section ... -->
-
-
-    <div class="container">
+    <!--mobile-->
+    <div class="d-block d-lg-none">
+        <section id="services" class="py-5">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <span class="badge badge-glow mb-3">
+                        <i class="fas fa-laptop-code me-2"></i>My Services
+                    </span>
+                    <h2 class="gradient-text display-5 fw-bold">What I Offer</h2>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Service 1 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-card glass-effect p-4 hover-translate h-100">
+                            <div class="service-icon mb-4" data-aos="fade-up" data-aos-delay="100">
+                                <i class="fas fa-code gradient-text fa-3x"></i>
+                            </div>
+                            <h3 class="h4 mb-3 text-center">Web Development</h3>
+                            <p class="text-gray mb-3 text-center">
+                                Custom, responsive websites built with modern technologies like React, Node.js, and MongoDB.
+                            </p>
+                            <ul class="service-features text-center">
+                                <li><i class="fas fa-check-circle gradient-text me-2"></i>Frontend Development</li>
+                                <li><i class="fas fa-check-circle gradient-text me-2"></i>Backend Integration</li>
+                                <li><i class="fas fa-check-circle gradient-text me-2"></i>API Development</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-card glass-effect p-4 hover-translate h-100">
+                            <div class="service-icon mb-4">
+                                <i class="fas fa-mobile-alt gradient-text fa-3x"></i>
+                            </div>
+                            <h3 class="h4 mb-3 text-center">Responsive Design</h3>
+                            <p class="text-gray mb-3 text-center">
+                                Mobile-first designs that work perfectly on all devices and screen sizes.
+                            </p>
+                            <ul class="service-features text-center">
+                                <li><i class="fas fa-check-circle gradient-text me-2"></i>Mobile Optimization</li>
+                                <li><i class="fas fa-check-circle gradient-text me-2"></i>Cross-Browser Compatibility</li>
+                                <li><i class="fas fa-check-circle gradient-text me-2"></i>Performance Tuning</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-card glass-effect p-4 hover-translate h-100">
+                            <div class="service-icon mb-4">
+                                <i class="fas fa-database gradient-text fa-3x"></i>
+                            </div>
+                            <h3 class="h4 mb-3 text-center">Database Solutions</h3>
+                            
+                            <p class="text-gray mb-3 text-center">
+                                Robust database architectures and efficient data management solutions.
+                            </p>
+                            <ul class="service-features text-center">
+                                <li><i class="fas fa-check-circle gradient-text me-2"></i>SQL & NoSQL Databases</li>
+                                <li><i class="fas fa-check-circle gradient-text me-2"></i>Data Modeling</li>
+                                <li><i class="fas fa-check-circle gradient-text me-2"></i>Query Optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+      <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class=" p-4 rounded-4 fade-up">
@@ -1552,6 +1234,1006 @@
 
         </div>
     </div>
+    <section id="client-confidence" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="badge badge-glow mb-3">
+                    <i class="fas fa-handshake me-2"></i>Client Assurance
+                </span>
+                <h2 class="gradient-text display-5 fw-bold">Why Developers & Clients Choose Me</h2>
+            </div>
+    
+            <div class="row g-4">
+                           <!-- Assurance Card 1 -->
+                           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="confidence-card glass-effect p-4 h-100">
+                                <div class="confidence-icon mb-3 text-center">
+                                    <div class="icon-container bg-gradient p-3 rounded-circle">
+                                        <i class="fas fa-cogs fa-3x text-white"></i>
+                                    </div>
+                                </div>
+                                <h3 class="h4 mb-3 text-center">Development Process</h3>
+                                <div class="process-progress mb-4">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-gray">Project Completion</span>
+                                        <span class="gradient-text">100%</span>
+                                    </div>
+                                    <div class="progress security-progress">
+                                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                                
+                                <ul class="security-features list-unstyled">
+                                    <li class="mb-3">
+                                        <i class="fas fa-project-diagram me-2 text-primary"></i>
+                                        Requirement Analysis
+                                        <span class="badge bg-success-soft ms-2">Phase 1</span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="fas fa-code-branch me-2 text-info"></i>
+                                        Architecture Design
+                                        <span class="badge bg-primary-soft ms-2">Phase 2</span>
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="fas fa-bug me-2 text-danger"></i>
+                                        Quality Assurance
+                                        <span class="badge bg-danger-soft ms-2">Phase 3</span>
+                                    </li>
+                                </ul>
+                                
+                                <div class="tech-badges mt-4">
+                                    <span class="badge bg-dark-soft">Agile</span>
+                                    <span class="badge bg-primary-soft">Scrum</span>
+                                    <span class="badge bg-success-soft">CI/CD</span>
+                                </div>
+            
+                                <!-- Hidden Process Details -->
+                                <div class="security-more-details mt-3">
+                                    <div class="alert alert-dark-soft text-start">
+                                        <i class="fas fa-clock me-2"></i>
+                                        Weekly client demos & sprint reviews included
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- Assurance Card 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="confidence-card glass-effect p-4 h-100">
+                        <div class="confidence-icon mb-3 text-center">
+                            <div class="icon-container bg-gradient p-3 rounded-circle">
+                                <i class="fas fa-rocket fa-3x text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="h4 mb-3 text-center">Delivery Excellence</h3>
+                        <div class="delivery-metrics mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-gray">Project Velocity</span>
+                                <span class="gradient-text">95%</span>
+                            </div>
+                            <div class="progress security-progress">
+                                <div class="progress-bar bg-gradient" role="progressbar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <ul class="security-features list-unstyled">
+                            <li class="mb-3">
+                                <i class="fas fa-check-circle me-2 text-success"></i>
+                                100% On-Time Delivery
+                                <span class="badge bg-success-soft ms-2">24h</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-shipping-fast me-2 text-primary"></i>
+                                Avg. Delivery Time
+                                <span class="badge bg-primary-soft ms-2">3.2 Days</span>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-calendar-check me-2 text-warning"></i>
+                                Milestone Accuracy
+                                <span class="badge bg-warning-soft ms-2">98%</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="tech-badges mt-4">
+                            <span class="badge bg-dark-soft">Agile</span>
+                            <span class="badge bg-primary-soft">Scrum</span>
+                            <span class="badge bg-success-soft">Kanban</span>
+                        </div>
+                        
+                        <!-- Hidden Delivery Details -->
+                        <div class="security-more-details mt-3">
+                            <div class="alert alert-dark-soft text-start">
+                                <i class="fas fa-clock me-2"></i>
+                                24/7 Support SLA with 2h response time guarantee
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Assurance Card 3 -->
+                            <!-- Assurance Card 3 -->
+                            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                                <div class="confidence-card glass-effect p-4 h-100">
+                                    <div class="confidence-icon mb-3 text-center">
+                                        <div class="icon-container bg-gradient p-3 rounded-circle">
+                                            <i class="fas fa-lock fa-3x text-white"></i>
+                                        </div>
+                                    </div>
+                                    <h3 class="h4 mb-3 text-center">Security & Infrastructure</h3>
+                                    <div class="security-details">
+                                        <div class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <i class="fas fa-shield-halved me-2 text-primary"></i>
+                                                <span class="fw-medium">Enterprise-Grade Protection</span>
+                                            </div>
+                                            <div class="progress security-progress">
+                                                <div class="progress-bar bg-gradient" role="progressbar" style="width: 95%"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <ul class="security-features list-unstyled">
+                                            <li class="mb-3">
+                                                <i class="fas fa-database me-2 text-success"></i>
+                                                Daily encrypted backups
+                                                <span class="badge bg-success-soft ms-2">NEW</span>
+                                            </li>
+                                            <li class="mb-3">
+                                                <i class="fas fa-user-lock me-2 text-purple"></i>
+                                                Role-based access control
+                                            </li>
+                                            <li class="mb-3">
+                                                <i class="fas fa-clock-rotate-left me-2 text-warning"></i>
+                                                30-day version history
+                                            </li>
+                                        </ul>
+                                        
+                                        <div class="tech-badges mt-4">
+                                            <span class="badge bg-dark-soft">AES-256</span>
+                                            <span class="badge bg-primary-soft">GDPR Ready</span>
+                                            <span class="badge bg-success-soft">SSL/TLS 1.3</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Hidden Security Details -->
+                                    <div class="security-more-details mt-3">
+                                        <div class="alert alert-dark-soft text-start">
+                                            <i class="fas fa-info-circle me-2"></i>
+                                            Full audit trail logging and 2FA available on all projects
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <style>/* Security Section Enhancements */
+                                .icon-container {
+                                    width: 80px;
+                                    height: 80px;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
+                                
+                                .security-progress {
+                                    height: 8px;
+                                    background: rgba(255,255,255,0.1);
+                                    border-radius: 4px;
+                                }
+                                
+                                .security-features li {
+                                    padding: 8px 12px;
+                                    background: rgba(255,255,255,0.03);
+                                    border-radius: 6px;
+                                    transition: all 0.3s ease;
+                                }
+                                
+                                .security-features li:hover {
+                                    transform: translateX(10px);
+                                    background: rgba(110,87,224,0.1);
+                                }
+                                
+                                .bg-dark-soft {
+                                    background: rgba(0,0,0,0.15);
+                                    color: #fff;
+                                }
+                                
+                                .bg-primary-soft {
+                                    background: rgba(110,87,224,0.15);
+                                    color: #6E57E0;
+                                }
+                                
+                                .bg-success-soft {
+                                    background: rgba(40,167,69,0.15);
+                                    color: #28a745;
+                                }
+                                
+                                .confidence-card:hover .security-more-details {
+                                    opacity: 1;
+                                    max-height: 100px;
+                                }
+                                
+                                .security-more-details {
+                                    opacity: 0;
+                                    max-height: 0;
+                                    transition: all 0.3s ease;
+                                }</style>
+    
+            <!-- Trust Badges -->
+        
+            <!-- Trust Badges -->
+            <div class="trust-badges mt-5">
+                <div class="row g-4 justify-content-center">
+                    <!-- Verifiction Badge -->
+                    <div class= " col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="trust-card glass-effect p-4 h-100">
+                            <div class="trust-icon mb-3 text-center">
+                                <div class="icon-container bg-gradient p-3 rounded-circle">
+                                    <i class="fas fa-user-shield fa-3x text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="h5 mb-3 text-center">Identity Verified</h4>
+                            <div class="trust-meta d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-success-soft">Govt. ID Verified</span>
+                                <i class="fas fa-check-circle text-success"></i>
+                            </div>
+                            <p class="text-gray small">Full background check completed including government-issued ID verification</p>
+                        </div>
+                    </div>
+    
+                    <!-- Security Badge -->
+                    <div class=" col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="trust-card glass-effect p-4 h-100">
+                            <div class="trust-icon mb-3 text-center">
+                                <div class="icon-container bg-gradient p-3 rounded-circle">
+                                    <i class="fas fa-lock fa-3x text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="h5 mb-3 text-center">Secure Payments</h4>
+                            <div class="trust-meta d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-primary-soft">PCI DSS Compliant</span>
+                                <i class="fas fa-credit-card text-primary"></i>
+                            </div>
+                            <p class="text-gray small">All transactions protected with 256-bit SSL encryption</p>
+                        </div>
+                    </div>
+    
+                    <!-- Compliance Badge -->
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="trust-card glass-effect p-4 h-100">
+                            <div class="trust-icon mb-3 text-center">
+                                <div class="icon-container bg-gradient p-3 rounded-circle">
+                                    <i class="fas fa-shield-alt fa-3x text-white"></i>
+                                </div>
+                            </div>
+                            <h4 class="h5 mb-3 text-center">Privacy Certified</h4>
+                            <div class="trust-meta d-flex justify-content-between align-items-center mb-3">
+                                <span class="badge bg-danger-soft">GDPR Ready</span>
+                                <i class="fas fa-user-secret text-danger"></i>
+                            </div>
+                            <p class="text-gray small">Data protection compliant with international privacy regulations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>.trust-card {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .trust-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 25px rgba(110, 87, 224, 0.15);
+            }
+            
+            .trust-meta {
+                padding: 12px;
+                background: rgba(255,255,255,0.03);
+                border-radius: 8px;
+            }
+            
+            .bg-danger-soft {
+                background: rgba(220,53,69,0.15);
+                color: #dc3545;
+            }</style>
+    <style>
+        /* Add to your existing styles */
+        .confidence-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .confidence-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(110, 87, 224, 0.2);
+        }
+    
+        .confidence-list {
+            list-style: none;
+            padding-left: 0;
+        }
+    
+        .confidence-list li {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+    
+        .trust-badges {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+    
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            background: rgba(110, 87, 224, 0.1);
+            border-radius: 30px;
+            border: 1px solid rgba(110, 87, 224, 0.3);
+            transition: all 0.3s ease;
+        }
+    
+        .trust-badge:hover {
+            background: rgba(110, 87, 224, 0.2);
+            transform: scale(1.05);
+        }
+    
+        .confidence-stats {
+            display: grid;
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+    
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+        }
+    
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #6E57E0;
+            line-height: 1;
+        }
+    
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+<!-- Add this after your existing client-confidence section -->
+<section id="success-guarantee" class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5" data-aos="fade-up">
+            <span class="badge badge-glow mb-3">
+                <i class="fas fa-shield-alt me-2"></i>My Promise
+            </span>
+            <h2 class="gradient-text display-5 fw-bold">Client Success Guarantee</h2>
+            <p class="text-white">Your project's success is my top priority</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Guarantee 1 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="guarantee-card glass-effect p-4 text-center h-100">
+                    <div class="guarantee-icon mb-4">
+                        <div class="icon-container bg-gradient p-3 rounded-circle mx-auto">
+                            <i class="fas fa-hand-holding-usd fa-3x text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="h4 mb-3">Money-Back Guarantee</h3>
+                    <p class="text-gray mb-4">30-day satisfaction guarantee or your money back</p>
+                    <div class="guarantee-badge">
+                        <span class="badge bg-success-soft">Risk-Free</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guarantee 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="guarantee-card glass-effect p-4 text-center h-100">
+                    <div class="guarantee-icon mb-4">
+                        <div class="icon-container bg-gradient p-3 rounded-circle mx-auto">
+                            <i class="fas fa-calendar-check fa-3x text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="h4 mb-3">On-Time Delivery</h3>
+                    <p class="text-gray mb-4">100% on-time project completion record</p>
+                    <div class="guarantee-badge">
+                        <span class="badge bg-primary-soft">Reliable</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guarantee 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="guarantee-card glass-effect p-4 text-center h-100">
+                    <div class="guarantee-icon mb-4">
+                        <div class="icon-container bg-gradient p-3 rounded-circle mx-auto">
+                            <i class="fas fa-headset fa-3x text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="h4 mb-3">24/7 Support</h3>
+                    <p class="text-gray mb-4">Dedicated support with 2-hour response time</p>
+                    <div class="guarantee-badge">
+                        <span class="badge bg-info-soft">Always Available</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Metrics -->
+        <div class="success-metrics glass-effect mt-5 p-4 p-md-5" data-aos="fade-up">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h3 class="h4 mb-3">Proven Track Record</h3>
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            <div class="metric-value counter" data-target="100">0</div>
+                            <div class="metric-label">Project Completion</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <div class="metric-value counter" data-target="95">0</div>
+                            <div class="metric-label">Repeat Clients</div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <div class="metric-value counter" data-target="4.9">0</div>
+                            <div class="metric-label">Avg. Rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mt-4 mt-md-0">
+                    <a href="#contact-form" class="btn btn-gradient btn-lg">
+                        <i class="fas fa-paper-plane me-2"></i>Start Your Project
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Add to your existing styles */
+.guarantee-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(110, 87, 224, 0.1);
+}
+
+.guarantee-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(110, 87, 224, 0.15);
+    border-color: rgba(110, 87, 224, 0.3);
+}
+
+.guarantee-icon {
+    transition: all 0.5s ease;
+}
+
+.guarantee-card:hover .guarantee-icon {
+    animation: iconPulse 1.5s ease infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.success-metrics {
+    background: rgba(110, 87, 224, 0.05);
+    border-left: 4px solid #6E57E0;
+    border-radius: 15px;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #6E57E0;
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+</style>
+
+
+
+<section id="pricing" class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="gradient-text display-5 fw-bold">Development Packages</h2>
+            <p class="text-white">Transparent pricing for all business sizes</p>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Basic Package -->
+          <!-- Basic Package -->
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+    <div class="pricing-card glass-effect p-4 hover-translate">
+        <div class="popular-ribbon">Most Popular</div>
+        <h3 class="gradient-text">Starter</h3>
+        <div class="price-display mb-4 pulse">
+            <span class="h1">₹</span>
+            <span class="display-4 fw-bold">15K</span>
+            <span class="h5">/project</span>
+        </div>
+        <li class="feature-item">
+            <i class="fas fa-check-circle gradient-text me-2"></i>
+                Basic CMS
+        </li>
+        <ul class="features-list">
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                Up to 5 pages
+            </li>
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                Customize Design
+            </li>
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                1mo support
+            </li>
+        </ul>
+        <a href="#contact-form" class="btn btn-gradient w-100 mt-4">
+            <i class="fas fa-comment-dots me-2"></i>Discuss Project
+        </a>
+    </div>
+</div>
+
+<!-- Professional Package -->
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="pricing-card glass-effect p-4 hover-translate">
+        <h3 class="gradient-text">Professional</h3>
+        <div class="price-display mb-4 pulse">
+            <span class="h1">₹</span>
+            <span class="display-4 fw-bold">45K</span>
+            <span class="h5">/project</span>
+        </div>
+        <ul class="features-list">
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                E-Commerce Ready
+            </li>
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                Up to 15 pages
+            </li>
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                Custom Design
+            </li>
+            
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                3mo Support
+            </li>
+        </ul>
+        <a href="https://wa.me/919080700642" class="btn btn-gradient w-100 mt-4">
+            <i class="fab fa-whatsapp me-2"></i>Instant Chat
+        </a>
+    </div>
+</div>
+
+<!-- Enterprise Package -->
+<div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+    <div class="pricing-card glass-effect p-4 hover-translate">
+        <h3 class="gradient-text">Enterprise</h3>
+        <div class="price-display mb-4 pulse">
+            <span class="h1">₹</span>
+            <span class="display-4 fw-bold">90K</span>
+            <span class="h5">/project</span>
+        </div>
+        <ul class="features-list">
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                Full Customization
+            </li>
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                Customizice Pages
+            </li>
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                API Integration
+            </li>
+            <li class="feature-item">
+                <i class="fas fa-check-circle gradient-text me-2"></i>
+                6mo Support
+            </li>
+        </ul>
+        <a href="mailto:vigneshvcoder@gmail.com" class="btn btn-gradient w-100 mt-4">
+            <i class="fas fa-envelope me-2"></i>Email Proposal
+        </a>
+    </div>
+</div>
+
+<style>
+.pricing-card {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(110, 87, 224, 0.2);
+    border-image: linear-gradient(45deg, #6E57E0, #9B6DFF) 1;
+}
+
+.price-display {
+    background: linear-gradient(135deg, rgba(110, 87, 224, 0.1), rgba(110, 87, 224, 0.2));
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.pulse {
+    animation: pricePulse 2s infinite;
+}
+
+@keyframes pricePulse {
+    0% { box-shadow: 0 0 0 0 rgba(110, 87, 224, 0.2); }
+    70% { box-shadow: 0 0 0 15px rgba(110, 87, 224, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(110, 87, 224, 0); }
+}
+
+.feature-item {
+    transition: transform 0.3s ease;
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.feature-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.popular-ribbon {
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    background: #9B6DFF;
+    color: white;
+    padding: 0.5rem 2rem;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+    box-shadow: 0 2px 15px rgba(155, 109, 255, 0.3);
+}
+</style>
+        </div>
+    </div>
+</section>
+<section id="timeline" class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="badge badge-glow mb-3">
+                <i class="fas fa-code-branch me-2"></i>My Journey
+            </span>
+            <h2 class="gradient-text display-5 fw-bold">Coding Milestones</h2>
+            <p class="text-gray">Key moments in my development career</p>
+        </div>
+
+        <div class="timeline-container">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item" data-aos="fade-up">
+                <div class="timeline-content glass-effect">
+                    <div class="timeline-date">2024</div>
+                    <h3> Started Web Development</h3>
+                    <p>Began learning HTML, CSS and JavaScript through NxtWave  </p>
+                    <div class="timeline-badge">
+                        
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-content glass-effect">
+                    <div class="timeline-date">2025</div>
+                    <h3>React Certification</h3>
+                    <p>Completed React Web Development certification from Acno soft</p>
+                    <div class="timeline-badge">
+                        <i class="fab fa-react"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="timeline-content glass-effect">
+                    <div class="timeline-date">202?</div>
+                    <h3> First Freelance Project</h3>
+                    <p>I'm Looking for a  client do you have need website contanct me  </p>
+                    <div class="timeline-badge">
+                      
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more timeline items as needed -->
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Timeline Styles */
+    .timeline-container {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .timeline-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 3px;
+        background: rgba(110, 87, 224, 0.2);
+        transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+        padding: 20px 0;
+        position: relative;
+    }
+    
+    .timeline-content {
+        position: relative;
+        padding: 20px;
+        border-radius: 15px;
+        width: calc(50% - 40px);
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+        margin-left: auto;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-right: auto;
+    }
+    
+    .timeline-date {
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(110, 87, 224, 0.2);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-badge {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(110, 87, 224, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-badge {
+        left: -60px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-badge {
+        right: -60px;
+    }
+    
+    @media (max-width: 768px) {
+        .timeline-container::before {
+            left: 20px;
+        }
+        
+        .timeline-content {
+            width: calc(100% - 80px);
+            margin-left: 60px !important;
+        }
+        
+        .timeline-badge {
+            left: -50px !important;
+            right: auto !important;
+        }
+        
+        .timeline-date {
+            left: 20px;
+            transform: none;
+        }
+    }
+</style>
+
+<!-- ... existing portfolio section ... -->
+
+<section id="challenges" class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="badge badge-glow mb-3">
+                <i class="fas fa-trophy me-2"></i>Achievements
+            </span>
+            <h2 class="gradient-text display-5 fw-bold">Coding Challenges</h2>
+            <p class="text-gray">My problem-solving journey</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Challenge 1 -->
+            <div class="col-md-4" data-aos="fade-up">
+                <div class="challenge-card glass-effect p-4 text-center h-100">
+                    <div class="challenge-badge mb-3">
+                        <i class="fas fa-medal gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="h5">LeetCode</h3>
+                    <p class="text-gray small">1165+ Problems Solved</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Challenge 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="challenge-card glass-effect p-4 text-center h-100">
+                    <div class="challenge-badge mb-3">
+                        <i class="fas fa-code gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="h5">Unit</h3>
+                    <p class="text-gray small">319 units complete</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Challenge 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="challenge-card glass-effect p-4 text-center h-100">
+                    <div class="challenge-badge mb-3">
+                        <i class="fas fa-laptop-code gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="h5">Learing Time Spend</h3>
+                    <p class="text-gray small">10165 min</p>
+                    <div class="progress mt-3" style="height: 8px;">
+                        <div class="progress-bar bg-gradient" role="progressbar" style="width: 60%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Replace the challenges section with this enhanced version -->
+<style>
+    /* Coding Challenges Animation Styles */
+    .challenge-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transform: translateY(20px);
+        opacity: 0;
+        animation: cardRise 0.8s forwards;
+        perspective: 1000px;
+        border: 1px solid rgba(110, 87, 224, 0.2);
+    }
+    
+    @keyframes cardRise {
+        0% {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    .challenge-card:hover {
+        transform: translateY(-5px) rotateX(5deg);
+        box-shadow: 0 15px 30px rgba(110, 87, 224, 0.3);
+    }
+    
+    .challenge-badge {
+        transition: all 0.5s ease;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .challenge-card:hover .challenge-badge {
+        animation: badgePulse 2s ease infinite;
+    }
+    
+    @keyframes badgePulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+    
+    .progress {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #6E57E0, #9B6DFF);
+        position: relative;
+        transition: width 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .progress-bar::after {
+        content: '';
+        position: absolute;
+        right: -5px;
+        top: -3px;
+        width: 14px;
+        height: 14px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(110, 87, 224, 0.8);
+        transform: scale(0);
+        transition: transform 0.3s ease;
+    }
+    
+    .challenge-card:hover .progress-bar::after {
+        transform: scale(1);
+    }
+    
+    /* Staggered animations */
+    .challenge-card:nth-child(1) { animation-delay: 0.1s; }
+    .challenge-card:nth-child(2) { animation-delay: 0.3s; }
+    .challenge-card:nth-child(3) { animation-delay: 0.5s; }
+</style>
+
+<!-- Add this JavaScript for progress bar animation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate progress bars on scroll
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        const animateProgressBars = () => {
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        };
+        
+        // Run on page load
+        animateProgressBars();
+        
+        // Also run when section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateProgressBars();
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(document.querySelector('#challenges'));
+    });
+</script>
+
+    <!-- Add after your skills section -->
+
         <!-- Certifications Section -->
         <section id="certifications" class="py-5 d-none d-lg-block">
             <div class="container">
@@ -2010,10 +2692,85 @@
             </div>
         </div>
     </section>
+<!-- Add this before the contact section -->
+<section id="satisfaction" class="py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="badge badge-glow mb-3">
+                <i class="fas fa-smile-beam me-2"></i>Client Happiness
+            </span>
+            <h2 class="gradient-text display-5 fw-bold">Customer Satisfaction</h2>
+            <p class="text-white">Delivering excellence since 2024</p>
+        </div>
 
-<!-- Add after portfolio section -->
-    <!-- Contact Section -->
-    <!-- ... existing code ... -->
+        <div class="row g-4">
+            <!-- Satisfaction Metric 1 -->
+            <div class=" col-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="metric-card glass-effect p-4 text-center">
+                    <div class="metric-icon mb-3">
+                        <i class="fas fa-heart gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="display-4 fw-bold"><span class="counter" data-target="100">0</span>%</h3>
+                    <p class="text-gray mb-0">Satisfaction Rate</p>
+                </div>
+            </div>
+            
+            <!-- Satisfaction Metric 2 -->
+            <div class=" col-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="metric-card glass-effect p-4 text-center">
+                    <div class="metric-icon mb-3">
+                        <i class="fas fa-redo gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="display-4 fw-bold"><span class="counter" data-target="95">0</span>%</h3>
+                    <p class="text-gray mb-0">Repeat Clients</p>
+                </div>
+            </div>
+            
+            <!-- Satisfaction Metric 3 -->
+            <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="metric-card glass-effect p-4 text-center">
+                    <div class="metric-icon mb-3">
+                        <i class="fas fa-clock gradient-text fa-3x"></i>
+                    </div>
+                    <h3 class="display-4 fw-bold"><span class="counter" data-target="24">0</span>h</h3>
+                    <p class="text-gray mb-0">Avg. Response Time</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="#contact-form" class="btn btn-gradient btn-lg px-5">
+                <i class="fas fa-comments me-2"></i>Share Your Experience
+            </a>
+        </div>
+    </div>
+</style>
+
+<style>
+.metric-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+}
+
+.metric-card:hover {
+    transform: translateY(-10px);
+    border-image: linear-gradient(45deg, #6E57E0, #9B6DFF) 1;
+    box-shadow: 0 15px 30px rgba(110, 87, 224, 0.2);
+}
+
+.metric-icon {
+    transition: transform 0.5s ease;
+}
+
+.metric-card:hover .metric-icon {
+    animation: iconFloat 2s ease infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+</style>
 
 <!-- Contact Form Section -->
 <section id="contact-form" class="contact-form-section py-5">
@@ -2028,11 +2785,12 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="form-container glass-effect p-4 p-md-5 rounded-4">
-                    <form id="message-form" class="needs-validation" novalidate>
+                    <form id="message-form" class="needs-validation" action="https://formspree.io/f/mrbqpnaq" 
+                    method="POST">
                         <div class="row g-4">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control form-input" id="sender-name" placeholder="Your Name" required>
+                                    <input type="text" name="name" class="form-control form-input" id="sender-name" placeholder="Your Name" required>
                                     <label for="sender-name">Your Name</label>
                                     <div class="invalid-feedback">
                                         Please provide your name.
@@ -2041,7 +2799,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control form-input" id="sender-email" placeholder="Your Email" required>
+                                    <input type="email" name="_replyto" class="form-control form-input" id="sender-email" placeholder="Your Email" required>
                                     <label for="sender-email">Your Email</label>
                                     <div class="invalid-feedback">
                                         Please provide a valid email.
@@ -2050,7 +2808,16 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control form-input" id="message-subject" placeholder="Subject" required>
+                                    <input type="text" name="phone" class="form-control form-input" id="message-subject" placeholder="Subject" required>
+                                    <label for="message-subject">Phone</label>
+                                    <div class="invalid-feedback">
+                                        Please provide a Phone Number.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="_subject" class="form-control form-input" id="message-subject" placeholder="Subject" required>
                                     <label for="message-subject">Subject</label>
                                     <div class="invalid-feedback">
                                         Please provide a subject.
@@ -2059,7 +2826,7 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control form-input" id="message-content" placeholder="Your Message" style="height: 150px" required></textarea>
+                                    <textarea class="form-control form-input" name="message" id="message-content" placeholder="Your Message" style="height: 150px" required></textarea>
                                     <label for="message-content">Your Message</label>
                                     <div class="invalid-feedback">
                                         Please enter your message.
@@ -2070,6 +2837,7 @@
                                 <button type="submit" class="btn btn-gradient btn-lg px-5">
                                     <i class="fas fa-paper-plane me-2"></i>Send Message
                                 </button>
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -2078,7 +2846,43 @@
         </div>
     </div>
 </section>
-
+<script>
+    document.getElementById('message-form').addEventListener('submit', function(e) {
+        const form = e.target;
+        
+        // Formspree AJAX submission
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent!',
+                    text: 'Thank you! I\'ll respond within 24 hours.',
+                    background: '#1a1a1a',
+                    confirmButtonColor: '#6E57E0'
+                });
+                form.reset();
+            } else {
+                throw new Error('Form submission failed');
+            }
+        }).catch(error => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Failed to send message. Please try again or contact me directly at vigneshvcoder@gmail.com',
+                background: '#1a1a1a',
+                confirmButtonColor: '#6E57E0'
+            });
+        });
+        
+        e.preventDefault();
+    });
+    </script>
 <!-- Add this in your skills section or footer -->
 <div class="coffee-fuel glass-effect p-3 rounded-4 d-none d-xl-block" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
     <div class="d-flex align-items-center mb-2">
@@ -2108,7 +2912,52 @@
 <!-- New Footer Section -->
 <!-- ... existing code ... -->
 <!-- Add near your visitor counter in footer -->
-
+<style>
+    /* Add these styles */
+    .footer-section {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .footer-links, .contact-info {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    .footer-links li, .contact-info li {
+        margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a, .contact-info a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+    }
+    
+    .footer-links a:hover, .contact-info a:hover {
+        color: #6E57E0;
+        transform: translateX(5px);
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.05);
+        border-radius: 50%;
+        color: rgba(255,255,255,0.7);
+        transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+        background: rgba(110, 87, 224, 0.2);
+        color: #6E57E0;
+        transform: translateY(-3px);
+    }
+    </style>
 <!-- Add where you want the clock to appear -->
 <!-- New Footer Section -->
 <footer class="footer-section py-5 position-relative">
@@ -2328,34 +3177,6 @@
     100% { transform: scale(1); }
 }
 </style>
-
-<script>
-    // Form validation and submission
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('message-form');
-        
-        form.addEventListener('submit', function(event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            } else {
-                event.preventDefault();
-                // Form is valid, handle submission
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Message Sent!',
-                    text: 'Thank you for your message. I will get back to you soon.',
-                    background: '#1a1a1a',
-                    color: '#fff',
-                    confirmButtonColor: '#6E57E0'
-                });
-                form.reset();
-            }
-            
-            form.classList.add('was-validated');
-        }, false);
-    });
-</script>
 
 
     <style>
@@ -3542,6 +4363,7 @@ form.addEventListener('submit', async function(event) {
 <!-- Add this before closing body tag -->
  
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 
 
 </body>
