@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top p-2">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-               <img src="ChatGPT_Image_Apr_30__2025__06_32_52_PM-removebg-preview.png" style="width:60px; height: 60px;"class="navbar-logo" 
+               <img src="vignesh710.png" style="width:60px; height: 60px;"class="navbar-logo" 
                alt="Vignesh Portfolio Logo"/>
             </a>
             <style>
@@ -66,19 +66,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#home" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Home</a>
+                    <a class="nav-link" href="#home" onclick="closeNavbar()">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">About</a>
+                    <a class="nav-link" href="#about" onclick="closeNavbar()">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#skills" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Skills</a>
+                    <a class="nav-link" href="#skills" onclick="closeNavbar()">Skills</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#portfolio" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Projects</a>
+                    <a class="nav-link" href="#portfolio" onclick="closeNavbar()">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact-form" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Contact</a>
+                    <a class="nav-link" href="#contact-form" onclick="closeNavbar()">Contact</a>
                 </li>
                 
      <!-- Add this inside your navbar, after the existing nav items -->
@@ -229,6 +229,12 @@
             bsCollapse.hide();
         }
     });
+    
+    function closeNavbar() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+        bsCollapse.hide();
+    }
 </script>
     
 <section id="home" class="hero-section pt-0">
@@ -274,6 +280,7 @@
                     <div class="blob-animation d-none d-xl-block">
                         <img src="IMG_20250424_143640.png" alt="Developer" class="hero-img ">
                     </div>
+                    
                     <div class="blob-animation d-xl-none">
                         <img src="IMG_20250424_143640.png" alt="Developer" class="hero-img  mb-4" style="margin-top: 150px;">
                     </div>
@@ -1748,23 +1755,75 @@
                 <div class="col-md-6 col-xxl-4">
                     <div class="project-card glass-effect"data-aos="zoom-in" data-aos-delay="100">
                         <div class="project-image">
-                            <img src="veera.jpg" alt="E-commerce Platform" class="img-fluid">
+                            <img src="agniwebtech.jpg" alt="E-commerce Platform" class="img-fluid">
                             <div class="project-overlay">
-                                <a href=" https://vignesh710-dev.github.io/Vignesh-Restaurant/" class="btn btn-gradient">View Details</a>
+                                <a href="https://vignesh710-dev.github.io/Agni-WebTech/" class="btn btn-gradient">View Details</a>
                             </div>
                         </div>
                         <div class="project-content p-4">
-                            <h3 class="h5 mb-3">Hotel Food Order </h3>
-                            <p class="text-gray mb-3">A full-stack e-commerce solution with React, Node.js, and MongoDB</p>
+                            <h3 class="h5 mb-3">Agni WebTech Portfoilo </h3>
+                            <p class="text-gray mb-3">A full-stack Portfoilo solution with HTML,CSS,BootStarp,JavaScript, Node.js</p>
                             <div class="tech-stack-badges">
-                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">HTML,CSS,BootStrap</span>
+                                <span class="tech-badge">JavaScript</span>
                                 <span class="tech-badge">Node.js</span>
-                                <span class="tech-badge">MySQL</span>
                             </div>
                         </div>
                     </div>
                 </div>
-    
+                <style>
+                    .project-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: linear-gradient(to top, rgba(10, 10, 11, 0.95), transparent 60%);
+                        display: flex;
+                        align-items: flex-end;
+                        padding: 20px;
+                        opacity: 0;
+                        transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+                        transform: translateY(10px);
+                    }
+                    
+                    .project-card:hover .project-overlay {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                    
+                    .project-badges {
+                        display: flex;
+                        gap: 8px;
+                        flex-wrap: wrap;
+                        transform: translateY(20px);
+                        transition: transform 0.4s ease 0.1s;
+                    }
+                    
+                    .project-card:hover .project-badges {
+                        transform: translateY(0);
+                    }
+                    
+                    /* Optional: Add a subtle shine effect */
+                    .project-overlay::before {
+                        content: '';
+                        position: absolute;
+                        top: -100%;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(
+                            to bottom,
+                            rgba(255, 255, 255, 0.1) 0%,
+                            rgba(255, 255, 255, 0) 100%
+                        );
+                        transition: all 0.6s ease;
+                    }
+                    
+                    .project-card:hover .project-overlay::before {
+                        top: 100%;
+                    }
+                    </style>
                 <!-- Project 2 -->
                 <div class="col-md-6 col-xxl-4">
                     <div class="project-card glass-effect"data-aos="zoom-in" data-aos-delay="200">
@@ -1788,18 +1847,18 @@
                 <div class="col-md-6 col-xxl-4">
                     <div class="project-card glass-effect"data-aos="zoom-in" data-aos-delay="200">
                         <div class="project-image">
-                            <img src="shoes.jpg" alt="Task Management App" class="img-fluid">
+                            <img src="https://i.pinimg.com/736x/5c/8a/d2/5c8ad215bd6d70a1c2133955d71a9389.jpg" alt="Task Management App" class="img-fluid">
                             <div class="project-overlay">
-                                <a href="https://vignesh710-dev.github.io/Shoes-Wbsite/" class="btn btn-gradient">View Details</a>
+                                <a href="https://vignesh710-dev.github.io/Dental-Clinic-1/" class="btn btn-gradient">View Details</a>
                             </div>
                         </div>
                         <div class="project-content p-4">
-                            <h3 class="h5 mb-3">Shoes Website</h3>
+                            <h3 class="h5 mb-3">Dental Clinic WebSite</h3>
                             <p class="text-gray mb-3">A collaborative task management application with real-time updates</p>
                             <div class="tech-stack-badges">
-                                <span class="tech-badge">HTML/CSS</span>
+                                <span class="tech-badge">HTML/CSS/BootStrap</span>
                                 <span class="tech-badge">JavaScript</span>
-                                <span class="tech-badge">Py/MySQL</span>
+                                <span class="tech-badge">Node.JS</span>
                             </div>
                         </div>
                     </div>
@@ -2025,13 +2084,13 @@
             <div class="col-lg-4 mb-4 mb-lg-0">
                 <div class="footer-brand d-flex align-items-center mb-4 d-none d-lg-block">
                     <a class="navbar-brand d-flex flex-row justify-content-center" href="#">
-                        <img src="ChatGPT_Image_Apr_30__2025__06_32_52_PM-removebg-preview.png" style="width:80px; height: 80px;"class="navbar-logo" 
+                        <img src="vignesh710.png" style="width:80px; height: 80px;"class="navbar-logo" 
                         alt="Vignesh Portfolio Logo"/>
                      </a>
                 </div>
                 <div class="footer-brand mb-4 d-block d-xl-none">
                     <a class="navbar-brand d-flex flex-row justify-content-center" href="#">
-                        <img src="ChatGPT_Image_Apr_30__2025__06_32_52_PM-removebg-preview.png" style="width:80px; height: 80px;"class="navbar-logo text-center" 
+                        <img src="vignesh710.png" style="width:80px; height: 80px;"class="navbar-logo text-center" 
                         alt="Vignesh Portfolio Logo"/>
                      </a>
                 </div>
